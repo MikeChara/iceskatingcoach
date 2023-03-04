@@ -49,36 +49,19 @@ export default function Home() {
           />
         </span>
         <div className={styles.grid}>
-          <a
-            href="/about"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="/about" className={styles.card}>
             <h2 className={inter.className}>About Chantelle</h2>
-            <p className={inter.className}>
-              Find in-depth information about Next.js features and&nbsp;API.
-            </p>
+            <p className={inter.className}>Hello!</p>
           </a>
 
-          <a
-            href="/coaching"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="/coaching" className={styles.card}>
             <h2 className={inter.className}>Coaching</h2>
             <p className={inter.className}>
               What can I learn and how much does it cost?
             </p>
           </a>
 
-          <a
-            href="/booklessons"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="/booklessons" className={styles.card}>
             <h2 className={inter.className}>Book Lessons</h2>
             <p className={inter.className}>
               Sign up and sign in here to book online lessons via our calender
@@ -86,12 +69,7 @@ export default function Home() {
             </p>
           </a>
 
-          <a
-            href="/contact"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="/contact" className={styles.card}>
             <h2 className={inter.className}>Contact Chantelle</h2>
             <p className={inter.className}>
               I'll try my best to get back to you within 2 days
