@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+.Chantelle-Splash-Container {
+  display: flex;
+  height: 80vh;
+}
+
+.Chantelle-Splash {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.Splash-Entry {
+  display: flex;
+  height: auto;
+}
