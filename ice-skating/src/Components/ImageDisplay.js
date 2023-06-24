@@ -1,25 +1,31 @@
 import React from "react";
 import "./button.css";
 
-export default function ImageDisplay({ images, className }) {
+export default function ImageDisplay({ images, className, alt, onClick }) {
   if (!images) {
     return <div>"Image failed to load "</div>;
   }
   if (!images.length) {
     return (
       <>
-        <button className={className} type="button" onClick={onClick}>
-          {text}
-        </button>
+        <img
+          src={images}
+          className={className}
+          alt={alt}
+          onClick={onClick}
+        ></img>
       </>
     );
   }
   if (images.length) {
     return (
       <>
-        <button className={className} type="button" onClick={onClick}>
-          {text}
-        </button>
+        <img
+          src={images}
+          className={className}
+          alt={alt}
+          onClick={onClick}
+        ></img>
       </>
     );
   }
