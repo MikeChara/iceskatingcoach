@@ -4,15 +4,18 @@ import "./App.css";
 import ImageDisplay from "./Components/ImageDisplay";
 
 function App() {
+  const handleClick = (event) => {
+    event.preventDefault();
+  };
   return (
     <div className="App">
       <header className="App-header">
         <div className="Chantelle-Splash-Container">
           <ImageDisplay
-            images={chantelleImage}
+            image={chantelleImage}
             className="Chantelle-Splash"
             alt="Chantelle A'Court"
-            onClick={null}
+            onClick={handleClick}
           />
         </div>
         <p>Chantelle A'Court Ice Skating.</p>
