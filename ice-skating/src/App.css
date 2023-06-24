@@ -1,20 +1,102 @@
 .App {
 }
 
+.landing-page {
+  animation: fadeOut 2s linear forwards;
+  background-color: white;
+  width: 100%;
+  height: 100vh;
+}
+
+.main-content {
+  opacity: 0;
+  animation: fadeIn 3s linear forwards;
+}
+
 .chantelle-splash-container {
   display: flex;
   justify-content: center;
-  height: 80vh;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+}
+
+.chantelle-splash-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("./Media/chantelle1.jpg");
+  background-size: cover;
+  filter: blur(10px);
+  opacity: 0.8;
+  mask-image: radial-gradient(
+    circle farthest-side,
+    transparent 80%,
+    white 100%
+  );
 }
 
 .chantelle-splash {
   max-height: 100%;
   max-width: 100%;
-}
-
-.welcome-message {
+  z-index: 1;
   display: flex;
   justify-content: center;
+  align-items: center;
+  animation: moveLeft 2s linear 4s forwards; /* New animation properties */
+}
+
+@keyframes moveLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-105%);
+  }
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  position: relative;
+}
+
+.menu-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: hotpink;
+  border: none;
+  border-radius: 5px;
+  opacity: 0;
+  animation: fadeIn 1s 6s forwards;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.menu-button:hover {
+  background-color: #0085d1;
+}
+
+.menu-button:active {
+  background-color: #0061a8;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeOut {
@@ -27,21 +109,6 @@
   100% {
     opacity: 0;
   }
-}
-
-.landing-page {
-  animation: fadeOut 3s linear forwards;
-  background-color: white;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.main-content {
-  opacity: 0;
-  animation: fadeIn 3s linear forwards;
 }
 
 @keyframes fadeIn {
