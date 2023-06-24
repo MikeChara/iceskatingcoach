@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from "react";
 
 export default function ImageDisplay({ image, className, alt, onClick }) {
-  const [displayImage, SetdisplayImage] = useState("Loading...");
+  const [displayImage, setDisplayImage] = useState("Loading...");
 
   useEffect(() => {
-    SetdisplayImage(image);
-  });
+    setDisplayImage(image);
+  }, [image]);
 
   if (!image) {
     return <div>Image failed to load.</div>;
   }
+
   if (displayImage) {
     return (
       <img
