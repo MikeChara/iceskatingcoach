@@ -5,22 +5,14 @@ import ImageDisplay from "./Components/ImageDisplay";
 
 function App() {
   const [showLanding, setShowLanding] = useState(true);
-  const [showMainContent, setShowMainContent] = useState(false);
 
-  //show the landing page for x seconds
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowLanding(false);
-    }, 2000);
+    }, 3000);
+
     return () => clearTimeout(timer);
   }, []);
-
-  //make sure main content loads after landing has finished cd
-  useEffect(() => {
-    if (!showLanding) {
-      setShowMainContent(true);
-    }
-  }, [showLanding]);
 
   const handleClick = (event) => {
     event.preventDefault();
@@ -31,8 +23,8 @@ function App() {
       {showLanding ? (
         <div className="landing-page">{/* Landing page content */}</div>
       ) : (
-        <div className={`main-content ${showMainContent ? "fade-in" : ""}`}>
-          <div className="Chantelle-Splash-Container">
+        <div className="main-content">
+          <div className="chantelle-splash-container">
             <ImageDisplay
               image={chantelleImage}
               className="Chantelle-Splash"
@@ -40,7 +32,7 @@ function App() {
               onClick={handleClick}
             />
           </div>
-          <div>
+          <div className="welcome-message">
             <p>Chantelle A'Court Ice Skating.</p>
           </div>
         </div>

@@ -1,35 +1,54 @@
 .App {
-  display: flex;
-  text-align: center;
 }
 
-.landing-page {
-  /* Landing page styles */
+.chantelle-splash-container {
   display: flex;
-  opacity: 1;
-  transition: opacity 1s;
-}
-
-.main-content {
-  display: flex;
-  opacity: 0;
-  transition: opacity 1s;
-}
-
-.Chantelle-Splash-Container {
-  display: flex;
+  justify-content: center;
   height: 80vh;
 }
 
-.Chantelle-Splash {
+.chantelle-splash {
   max-height: 100%;
   max-width: 100%;
 }
 
-.landing-page.fade-out {
-  opacity: 0;
+.welcome-message {
+  display: flex;
+  justify-content: center;
 }
 
-.main-content.fade-in {
-  opacity: 1;
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.landing-page {
+  animation: fadeOut 3s linear forwards;
+  background-color: white;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-content {
+  opacity: 0;
+  animation: fadeIn 3s linear forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
