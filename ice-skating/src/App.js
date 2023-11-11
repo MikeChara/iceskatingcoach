@@ -3,9 +3,19 @@ import chantelleImage from "./Media/chantelle1.jpg";
 import "./App.css";
 import ImageDisplay from "./Components/ImageDisplay";
 import Button from "./Components/Button.js";
+import About from "./PageComponents/About";
+import BookLessons from "./PageComponents/BookLessons";
+import Coaching from "./PageComponents/Coaching";
+import Contact from "./PageComponents/Contact";
+import New from "./PageComponents/New";
 
 function App() {
+  // This state allows a time which sets off the various moving elements
+  // when the page is first loaded.
   const [showLanding, setShowLanding] = useState(true);
+  // This state sets which component is loaded once the above is finished
+  // or a button is clicked.
+  const [currentComponent, setCurrentComponent] = useState(0);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -15,8 +25,9 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  const handleClick = (event) => {
-    event.preventDefault();
+  // Function to set the state and therefore switch to a different component.
+  const switchComponent = (componentName) => {
+    setCurrentComponent(componentName);
   };
 
   return (
@@ -25,39 +36,45 @@ function App() {
         <div className="landing-page">{/* Landing page video goes here */}</div>
       ) : (
         <div className="main-content">
+          <div className="menu">
+            <Button
+              onClick={() => switchComponent("Book Lessons")}
+              text="Book Lessons"
+              className="menu-button"
+            />
+            <Button
+              onClick={() => switchComponent("New?")}
+              text="New to ice-skating?"
+              className="menu-button"
+            />
+            <Button
+              onClick={() => switchComponent("Coaching")}
+              text="Coaching"
+              className="menu-button"
+            />
+            <Button
+              onClick={() => switchComponent("About")}
+              text="About Chantelle"
+              className="menu-button"
+            />
+            <Button
+              onClick={() => switchComponent("Contact")}
+              text="Contact"
+              className="menu-button"
+            />
+          </div>
           <div className="chantelle-splash-container">
             <ImageDisplay
               image={chantelleImage}
               className="chantelle-splash"
               alt="Chantelle A'Court"
-              onClick={handleClick}
             />
-            <div className="menu">
-              <Button
-                onClick={handleClick}
-                text="Book Lessons"
-                className="menu-button"
-              />
-              <Button
-                onClick={handleClick}
-                text="New to ice-skating?"
-                className="menu-button"
-              />
-              <Button
-                onClick={handleClick}
-                text="Coaching Style"
-                className="menu-button"
-              />
-              <Button
-                onClick={handleClick}
-                text="About Chantelle"
-                className="menu-button"
-              />
-              <Button
-                onClick={handleClick}
-                text="Contact"
-                className="menu-button"
-              />
+            <div className="page-content">
+              {currentComponent === "Book Lessons" && <BookLessons />}
+              {currentComponent === "New?" && <New />}
+              {currentComponent === "Coaching" && <Coaching />}
+              {currentComponent === "About" && <About />}
+              {currentComponent === "Contact" && <Contact />}
             </div>
           </div>
         </div>

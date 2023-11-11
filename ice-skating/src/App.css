@@ -13,14 +13,15 @@
   animation: fadeIn 3s linear forwards;
 }
 
+/* Image container */
 .chantelle-splash-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 95vh;
   position: relative;
 }
-
+/* Image container */
 .chantelle-splash-container::before {
   content: "";
   position: absolute;
@@ -38,7 +39,7 @@
     white 100%
   );
 }
-
+/* This is the image */
 .chantelle-splash {
   max-height: 100%;
   max-width: 100%;
@@ -54,15 +55,29 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-105%);
+    transform: translateX(-115%);
   }
 }
 
+/* this is the page components loading on button clicks */
+.page-content {
+  max-height: 100%;
+  max-width: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hotpink;
+  position: absolute;
+}
+
+/* menu lives one div above/outside of image */
 .menu {
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1;
+  background-color: hotpink;
 }
 
 .menu-button {
