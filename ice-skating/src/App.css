@@ -71,6 +71,10 @@
   position: absolute;
 }
 
+.page-content-header {
+  color: #fff;
+}
+
 /* menu lives one div above/outside of image */
 .menu {
   display: flex;

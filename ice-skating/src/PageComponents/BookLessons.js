@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function BookLessons({}) {
+export default function BookLessons({ h1className }) {
   return (
     <>
-      <h1>Book lessons</h1>
+      <h1 className={h1className}>Book lessons</h1>
     </>
   );
 }

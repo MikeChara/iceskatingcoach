@@ -70,11 +70,21 @@ function App() {
               alt="Chantelle A'Court"
             />
             <div className="page-content">
-              {currentComponent === "Book Lessons" && <BookLessons />}
-              {currentComponent === "New?" && <New />}
-              {currentComponent === "Coaching" && <Coaching />}
-              {currentComponent === "About" && <About />}
-              {currentComponent === "Contact" && <Contact />}
+              {currentComponent === "Book Lessons" && (
+                <BookLessons h1className="page-content-header" />
+              )}
+              {currentComponent === "New?" && (
+                <New h1className="page-content-header" />
+              )}
+              {currentComponent === "Coaching" && (
+                <Coaching h1className="page-content-header" />
+              )}
+              {currentComponent === "About" && (
+                <About h1className="page-content-header" />
+              )}
+              {currentComponent === "Contact" && (
+                <Contact h1className="page-content-header" />
+              )}
             </div>
           </div>
         </div>
