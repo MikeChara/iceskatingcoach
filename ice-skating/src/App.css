@@ -46,7 +46,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: moveLeft 2s linear 4s forwards; /* New animation properties */
+  animation: moveLeft 2s linear 4s forwards;
 }
 
 @keyframes moveLeft {
@@ -60,13 +60,12 @@
 
 .menu {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   z-index: 1;
-  position: relative;
 }
 
 .menu-button {
-  display: inline-block;
   padding: 10px 20px;
   font-size: 24px;
   font-weight: bold;
