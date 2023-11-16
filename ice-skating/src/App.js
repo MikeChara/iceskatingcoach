@@ -69,22 +69,32 @@ function App() {
               className="chantelle-splash"
               alt="Chantelle A'Court"
             />
-            <div className="page-content">
-              {currentComponent === "Book Lessons" && (
-                <BookLessons h1className="page-content-header" />
-              )}
-              {currentComponent === "New?" && (
-                <New h1className="page-content-header" />
-              )}
-              {currentComponent === "Coaching" && (
-                <Coaching h1className="page-content-header" />
-              )}
-              {currentComponent === "About" && (
-                <About h1className="page-content-header" />
-              )}
-              {currentComponent === "Contact" && (
-                <Contact h1className="page-content-header" />
-              )}
+            <div className="page-content-holder">
+              <div className="page-content">
+                {currentComponent === "Book Lessons" && (
+                  <BookLessons h1className="page-content-header" />
+                )}
+              </div>
+              <div className="page-content">
+                {currentComponent === "New?" && (
+                  <New h1className="page-content-header" />
+                )}
+              </div>
+              <div className="page-content">
+                {currentComponent === "Coaching" && (
+                  <Coaching h1className="page-content-header" />
+                )}
+              </div>
+              <div className="page-content">
+                {currentComponent === "About" && (
+                  <About h1className="page-content-header" />
+                )}
+              </div>
+              <div className="page-content">
+                {currentComponent === "Contact" && (
+                  <Contact h1className="page-content-header" />
+                )}
+              </div>
             </div>
           </div>
         </div>

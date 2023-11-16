@@ -13,15 +13,15 @@
   animation: fadeIn 3s linear forwards;
 }
 
-/* Image container */
+/* This is the image container */
 .chantelle-splash-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 95vh;
+  height: 94.5vh;
   position: relative;
 }
-/* Image container */
+/* This is the background */
 .chantelle-splash-container::before {
   content: "";
   position: absolute;
@@ -49,7 +49,7 @@
   align-items: center;
   animation: moveLeft 2s linear 4s forwards;
 }
-
+/* This defines the motion of the  image */
 @keyframes moveLeft {
   0% {
     transform: translateX(0);
@@ -59,16 +59,24 @@
   }
 }
 
-/* this is the page components loading on button clicks */
-.page-content {
-  max-height: 100%;
+/* this div contains the divs of page components loading on button clicks */
+.page-content-holder {
+  max-height: 94.5%;
   max-width: 100%;
+  border-radius: 10px;
   z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: hotpink;
   position: absolute;
+}
+
+.page-content {
+  z-index: 1;
+  display: flex;
+  justify-content: left;
+  position: absolute;
+  background-color: hotpink;
 }
 
 .page-content-header {
