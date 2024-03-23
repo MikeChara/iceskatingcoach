@@ -11,31 +11,27 @@
 }
 
 /* This is the image container. It also holds all the page content */
-.chantelle-splash-container {
+.render-area {
   max-height: 100vh;
   max-width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: red;
   position: relative;
 }
 /* This is the background */
-.chantelle-splash-container::before {
+.render-area::before {
   content: "";
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   background-image: url("./Media/chantelle1.jpg");
   background-size: cover;
-  filter: blur(10px);
+  filter: blur(14px);
   opacity: 0.8;
-  mask-image: radial-gradient(
-    circle farthest-side,
-    transparent 80%,
-    white 100%
-  );
+  mask-image: radial-gradient(circle farthest-side, transparent 50%, white 70%);
 }
 /* This is the image */
 .chantelle-splash {
@@ -46,8 +42,18 @@
   justify-content: center;
   align-items: center;
   position: relative;
+  mask-image: linear-gradient(to left, transparent, white);
 }
-
+.chantelle-splash-right {
+  max-height: 100vh;
+  max-width: 100vw;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  mask-image: linear-gradient(to right, transparent, white);
+}
 /* this div contains the divs of page components loading on button clicks */
 .page-content-holder {
   z-index: 1;
@@ -55,12 +61,12 @@
   max-width: 100vw;
   width: 100vw;
   height: 100vh;
-  background-color: yellow;
 }
 
 .page-content {
   z-index: 1;
   background-color: hotpink;
+  display: flex;
 }
 
 .page-content-header {

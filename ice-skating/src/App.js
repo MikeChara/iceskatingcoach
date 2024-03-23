@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import chantelleImage from "./Media/chantelle1.jpg";
+import chantelleEdgeFade from "./Media/chantelle1Fade.jpg";
 import "./App.css";
 import ImageDisplay from "./Components/ImageDisplay";
 import Button from "./Components/Button.js";
@@ -10,11 +11,9 @@ import Contact from "./PageComponents/Contact";
 import New from "./PageComponents/New";
 
 function App() {
-  // This state allows a time which sets off the various moving elements
-  // when the page is first loaded.
+  // This state allows a time which sets off the various moving elements when the page is first loaded.
   const [showLanding, setShowLanding] = useState(true);
-  // This state sets which component is loaded once the above is finished
-  // or a button is clicked.
+  // This state sets which component is loaded once the above is finished or a button is clicked.
   const [currentComponent, setCurrentComponent] = useState(0);
 
   useEffect(() => {
@@ -77,9 +76,9 @@ function App() {
               }
             />
           </div>
-          <div className="chantelle-splash-container">
+          <div className="render-area">
             <ImageDisplay
-              image={chantelleImage}
+              image={chantelleEdgeFade}
               className="chantelle-splash"
               alt="Chantelle A'Court"
             />
@@ -110,6 +109,11 @@ function App() {
                 )}
               </div>
             </div>
+            <ImageDisplay
+              image={chantelleEdgeFade}
+              className="chantelle-splash-right"
+              alt="Chantelle A'Court"
+            />
           </div>
         </div>
       )}
