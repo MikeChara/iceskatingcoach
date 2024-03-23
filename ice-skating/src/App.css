@@ -2,7 +2,7 @@
 .landing-page {
   animation: fadeOut 2s linear forwards;
   background-color: white;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
 }
 .main-content {
@@ -12,8 +12,8 @@
 
 /* This is the image container. It also holds all the page content */
 .chantelle-splash-container {
-  max-height: 100%;
-  max-width: 100%;
+  max-height: 100vh;
+  max-width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,8 +39,8 @@
 }
 /* This is the image */
 .chantelle-splash {
-  max-height: 100%;
-  max-width: 100%;
+  max-height: 100vh;
+  max-width: 100vw;
   z-index: 1;
   display: flex;
   justify-content: center;
@@ -51,8 +51,10 @@
 /* this div contains the divs of page components loading on button clicks */
 .page-content-holder {
   z-index: 1;
-  width: 100%;
-  height: 100%;
+  max-height: 100vh;
+  max-width: 100vw;
+  width: 100vw;
+  height: 100vh;
   background-color: yellow;
 }
 
