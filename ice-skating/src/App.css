@@ -1,30 +1,28 @@
-.App {
-}
-
+/* White fade-in */
 .landing-page {
   animation: fadeOut 2s linear forwards;
   background-color: white;
   width: 100%;
   height: 100vh;
 }
-
 .main-content {
   opacity: 0;
-  animation: fadeIn 3s linear forwards;
+  animation: fadeIn 2s linear forwards;
 }
 
-/* This is the image container */
+/* This is the image container. It also holds all the page content */
 .chantelle-splash-container {
+  max-height: 100%;
+  max-width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 94.5vh;
+  background-color: red;
   position: relative;
 }
 /* This is the background */
 .chantelle-splash-container::before {
   content: "";
-  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -47,35 +45,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: moveLeft 2s linear 4s forwards;
-}
-/* This defines the motion of the  image */
-@keyframes moveLeft {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-115%);
-  }
+  position: relative;
+  left: 0; /* Reset left positioning */
+  margin-right: auto; /* Reset margin */
+  margin-left: 0; /* Reset margin */
 }
 
 /* this div contains the divs of page components loading on button clicks */
 .page-content-holder {
-  max-height: 94.5%;
-  max-width: 100%;
-  border-radius: 10px;
   z-index: 1;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 
 .page-content {
   z-index: 1;
-  display: flex;
-  justify-content: left;
-  position: absolute;
   background-color: hotpink;
 }
 
@@ -103,7 +88,7 @@
   border: none;
   border-radius: 5px;
   opacity: 0;
-  animation: fadeIn 1s 6s forwards;
+  animation: fadeIn 1s 2s forwards;
   transition: background-color 0.3s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }

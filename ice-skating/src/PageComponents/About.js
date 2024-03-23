@@ -3,7 +3,7 @@ import React from "react";
 export default function About({ h1className }) {
   return (
     <>
-      <h1 className={h1className}>About</h1>
+      <h1 className={h1className}>About Chantelle</h1>
       <div className={h1className}>
         A bit about me I'm an iceskating coach I've been teaching for the last 7
         years.Before that I did two ice shows one abroad and one in london both
