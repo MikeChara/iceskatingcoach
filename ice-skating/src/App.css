@@ -145,3 +145,17 @@
     opacity: 1;
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .chantelle-splash {
+    display: none; /* Hide the image */
+  }
+
+  .menu-button,
+  .blue-button {
+    width: 20vw;
+    padding: 8px 12px; /* Adjusted padding for smaller screens */
+    font-size: 15px; /* Reduced font size for smaller screens */
+    border-radius: 2px;
+  }
+}

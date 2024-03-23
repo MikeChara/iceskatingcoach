@@ -39,7 +39,7 @@ function App() {
           <div className="menu">
             <Button
               onClick={() => switchComponent("Book Lessons")}
-              text="Book Lessons"
+              text={window.innerWidth <= 768 ? "Bookings" : "Book Lessons"}
               className={
                 currentComponent === "Book Lessons"
                   ? "blue-button"
@@ -48,7 +48,9 @@ function App() {
             />
             <Button
               onClick={() => switchComponent("New?")}
-              text="New to ice-skating?"
+              text={
+                window.innerWidth <= 768 ? "Beginners" : "New to ice-skating?"
+              }
               className={
                 currentComponent === "New?" ? "blue-button" : "menu-button"
               }
@@ -62,7 +64,7 @@ function App() {
             />
             <Button
               onClick={() => switchComponent("About")}
-              text="About Chantelle"
+              text={window.innerWidth <= 768 ? "Chantelle" : "About Chantelle"}
               className={
                 currentComponent === "About" ? "blue-button" : "menu-button"
               }
