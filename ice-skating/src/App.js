@@ -40,27 +40,39 @@ function App() {
             <Button
               onClick={() => switchComponent("Book Lessons")}
               text="Book Lessons"
-              className="menu-button"
+              className={
+                currentComponent === "Book Lessons"
+                  ? "blue-button"
+                  : "menu-button"
+              }
             />
             <Button
               onClick={() => switchComponent("New?")}
               text="New to ice-skating?"
-              className="menu-button"
+              className={
+                currentComponent === "New?" ? "blue-button" : "menu-button"
+              }
             />
             <Button
               onClick={() => switchComponent("Coaching")}
               text="Coaching"
-              className="menu-button"
+              className={
+                currentComponent === "Coaching" ? "blue-button" : "menu-button"
+              }
             />
             <Button
               onClick={() => switchComponent("About")}
               text="About Chantelle"
-              className="menu-button"
+              className={
+                currentComponent === "About" ? "blue-button" : "menu-button"
+              }
             />
             <Button
               onClick={() => switchComponent("Contact")}
               text="Contact"
-              className="menu-button"
+              className={
+                currentComponent === "Contact" ? "blue-button" : "menu-button"
+              }
             />
           </div>
           <div className="chantelle-splash-container">
