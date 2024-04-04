@@ -85,27 +85,27 @@ function App() {
             <div className="page-content-holder">
               <div className="page-content">
                 {currentComponent === "Book Lessons" && (
-                  <BookLessons h1className="page-content-header" />
+                  <BookLessons h1className="slide-bounce" />
                 )}
               </div>
               <div className="page-content">
                 {currentComponent === "New?" && (
-                  <New h1className="page-content-header" />
+                  <New h1className="slide-bounce" />
                 )}
               </div>
               <div className="page-content">
                 {currentComponent === "Coaching" && (
-                  <Coaching h1className="page-content-header" />
+                  <Coaching h1className="slide-bounce" />
                 )}
               </div>
               <div className="page-content">
                 {currentComponent === "About" && (
-                  <About h1className="page-content-header" />
+                  <About h1className="slide-bounce" />
                 )}
               </div>
               <div className="page-content">
                 {currentComponent === "Contact" && (
-                  <Contact h1className="page-content-header" />
+                  <Contact h1className="slide-bounce" />
                 )}
               </div>
             </div>

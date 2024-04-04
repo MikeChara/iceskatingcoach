@@ -3,8 +3,7 @@ import React from "react";
 export default function Contact({ h1className }) {
   return (
     <>
-      <h1 className={h1className}>Contact</h1>
-      <div className={h1className}></div>
+      <div className={h1className}>Email me here</div>
     </>
   );
 }

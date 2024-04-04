@@ -3,8 +3,7 @@ import React from "react";
 export default function Coaching({ h1className }) {
   return (
     <>
-      <h1 className={h1className}>Coaching</h1>
-      <div className={h1className}></div>
+      <div className={h1className}>I do the stuff and the things</div>
     </>
   );
 }
