@@ -54,6 +54,7 @@
   position: relative;
   mask-image: linear-gradient(to right, transparent, white);
 }
+
 /* this div contains the divs of page components loading on button clicks */
 .page-content-holder {
   z-index: 1;
@@ -124,6 +125,44 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.contact-form button {
+  padding: 10px 20px;
+  background-color: hotpink;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.contact-form button:hover {
+  background-color: #e05c8f;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -163,7 +202,7 @@
   .blue-button {
     width: 20vw;
     padding: 8px 12px; /* Adjusted padding for smaller screens */
-    font-size: 15px; /* Reduced font size for smaller screens */
+    font-size: 12px; /* Reduced font size for smaller screens */
     border-radius: 2px;
   }
 }
@@ -188,6 +227,52 @@
   100% {
     transform: translateX(0%);
   }
+}
+
+@keyframes flipIn {
+  0% {
+    transform: rotateY(180deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes flipOut {
+  0% {
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: rotateY(-180deg);
+    opacity: 0;
+  }
+}
+
+.page-content {
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  animation: flipIn 1s ease-in-out forwards;
+  opacity: 0;
+}
+
+.flip-out {
+  animation: flipOut 1s ease-in-out forwards;
+}
+
+.flip-in {
+  animation: flipIn 1s ease-in-out forwards;
+}
+
+.page-content-header {
+  color: #fff;
 }
 
 .slide-bounce {

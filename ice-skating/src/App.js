@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import chantelleImage from "./Media/chantelle1.jpg";
+import chantelleImage from "./Media/chantelle3.jpg";
 import chantelleEdgeFade from "./Media/chantelle1Fade.jpg";
 import "./App.css";
 import ImageDisplay from "./Components/ImageDisplay";
@@ -11,22 +11,24 @@ import Contact from "./PageComponents/Contact";
 import New from "./PageComponents/New";
 
 function App() {
-  // This state allows a time which sets off the various moving elements when the page is first loaded.
   const [showLanding, setShowLanding] = useState(true);
-  // This state sets which component is loaded once the above is finished or a button is clicked.
-  const [currentComponent, setCurrentComponent] = useState(0);
+  const [currentComponent, setCurrentComponent] = useState(null); // Start with no component selected
+  const [isFlipping, setIsFlipping] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowLanding(false);
     }, 1000);
-
     return () => clearTimeout(timer);
   }, []);
 
-  // Function to set the state and therefore switch to a different component.
   const switchComponent = (componentName) => {
-    setCurrentComponent(componentName);
+    setIsFlipping(true);
+
+    setTimeout(() => {
+      setCurrentComponent(componentName);
+      setIsFlipping(false);
+    }, 1000); // This delay should match the flip animation duration
   };
 
   return (
@@ -83,27 +85,33 @@ function App() {
               alt="Chantelle A'Court"
             />
             <div className="page-content-holder">
-              <div className="page-content">
+              <div
+                className={`page-content ${
+                  isFlipping ? "flip-out" : "flip-in"
+                }`}
+              >
+                {/* Conditionally render Chantelle image if no component is selected */}
+                {!currentComponent && (
+                  <div className="chantelle-image-container">
+                    <img
+                      src={chantelleImage}
+                      alt="Chantelle"
+                      className="chantelle-main-image"
+                    />
+                  </div>
+                )}
                 {currentComponent === "Book Lessons" && (
                   <BookLessons h1className="slide-bounce" />
                 )}
-              </div>
-              <div className="page-content">
                 {currentComponent === "New?" && (
                   <New h1className="slide-bounce" />
                 )}
-              </div>
-              <div className="page-content">
                 {currentComponent === "Coaching" && (
                   <Coaching h1className="slide-bounce" />
                 )}
-              </div>
-              <div className="page-content">
                 {currentComponent === "About" && (
                   <About h1className="slide-bounce" />
                 )}
-              </div>
-              <div className="page-content">
                 {currentComponent === "Contact" && (
                   <Contact h1className="slide-bounce" />
                 )}
