@@ -6,7 +6,9 @@ export default function BookLessons({ h1className }) {
       <h1 className={h1className}>
         Calendar Booking will be coming soon. For now, just say hi and let me
         know what sort of lessons you're interested in, with preferred
-        days/times.
+        days/times. This form is a work in progress and is currently not secure.
+        Please do not add any personal information in your first message using
+        this form.
       </h1>
       <form
         action="mailto:chantelle@mikedoe.anonaddy.com"
