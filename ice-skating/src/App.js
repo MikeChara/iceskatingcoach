@@ -79,11 +79,13 @@ function App() {
             />
           </div>
           <div className="render-area">
-            <ImageDisplay
-              image={chantelleEdgeFade}
-              className="chantelle-splash"
-              alt="Chantelle A'Court"
-            />
+            <div className="left-Chantelle">
+              <ImageDisplay
+                image={chantelleEdgeFade}
+                className="chantelle-splash"
+                alt="Chantelle A'Court"
+              />
+            </div>
             <div className="page-content-holder">
               <div className="slide-bounce-mobile-container">
                 {currentComponent === "Book Lessons" && (
@@ -113,11 +115,13 @@ function App() {
                 )}
               </div>
             </div>
-            <ImageDisplay
-              image={chantelleEdgeFade}
-              className="chantelle-splash-right"
-              alt="Chantelle A'Court"
-            />
+            <div className="right-Chantelle">
+              <ImageDisplay
+                image={chantelleEdgeFade}
+                className="chantelle-splash-right"
+                alt="Chantelle A'Court"
+              />
+            </div>
           </div>
         </div>
       )}

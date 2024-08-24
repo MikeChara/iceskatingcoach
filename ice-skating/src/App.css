@@ -187,6 +187,11 @@
 Note, we are set at 768 to cover phones and smaller tablets, rather than 480px to cover
 only phones.*/
 @media only screen and (max-width: 768px) {
+  .render-area::before {
+    background-size: contain; /* Change to 'contain' to maintain the aspect ratio */
+    background-position: center; /* Center the image within the container */
+  }
+
   .chantelle-splash {
     max-height: 90%; /* Adjust the height to fit better on mobile screens */
     max-width: 90%; /* Adjust the width to fit better on mobile screens */
@@ -202,6 +207,13 @@ only phones.*/
     height: auto; /* Maintain the aspect ratio */
   }
 
+  .right-Chantelle {
+    display: none;
+  }
+
+  .left-Chantelle {
+    display: none;
+  }
   .menu-button,
   .blue-button {
     width: 20%;
@@ -219,7 +231,6 @@ only phones.*/
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
   }
 
   .slide-bounce {
