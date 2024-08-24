@@ -2,8 +2,8 @@
 .landing-page {
   animation: fadeOut 2s linear forwards;
   background-color: white;
-  width: 100vw;
-  height: 100vh;
+  max-width: 90vw;
+  max-width: 90vh;
 }
 .main-content {
   opacity: 0;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-export default function ImageDisplay({ image, className, alt, onClick }) {
+export default function ImageDisplay({ image, className, alt }) {
   const [displayImage, setDisplayImage] = useState("Loading...");
 
   useEffect(() => {
@@ -12,13 +12,6 @@ export default function ImageDisplay({ image, className, alt, onClick }) {
   }
 
   if (displayImage) {
-    return (
-      <img
-        src={displayImage}
-        className={className}
-        alt={alt}
-        onClick={onClick}
-      ></img>
-    );
+    return <img src={displayImage} className={className} alt={alt}></img>;
   }
 }

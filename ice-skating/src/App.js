@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import chantelleImage from "./Media/chantelle3.jpg";
+import chantelleCompSplashImage from "./Media/chantelle3.jpg";
 import chantelleEdgeFade from "./Media/chantelle1Fade.jpg";
 import "./App.css";
 import ImageDisplay from "./Components/ImageDisplay";
@@ -105,9 +105,9 @@ function App() {
                 )}
                 {/* Conditionally render Chantelle image if no component is selected */}
                 {!currentComponent && (
-                  <div className="chantelle-image-container">
+                  <div className="chantelle-comp-splash-container">
                     <img
-                      src={chantelleImage}
+                      src={chantelleCompSplashImage}
                       alt="Chantelle"
                       className="chantelle-main-image"
                     />
