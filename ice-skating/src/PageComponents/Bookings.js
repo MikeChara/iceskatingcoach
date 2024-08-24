@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function BookLessons({ h1className }) {
+export default function Bookings({ textDivision }) {
   return (
     <div className="contact-form-wrapper">
-      <h1 className={h1className}>
+      <h1 className={textDivision}>
         Calendar Booking will be coming soon. For now, just say hi and let me
         know what sort of lessons you're interested in, with preferred
         days/times. This form is a work in progress and is currently not secure.

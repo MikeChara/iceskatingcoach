@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function About({ h1className }) {
+export default function About({ textDivision }) {
   return (
     <>
-      <div className={h1className}>
+      <div className={textDivision}>
         Hello and welcome! I'm an iceskating veteran coach of seven years now,
         and find great joy in the success of my pupils. <br />
         <br />

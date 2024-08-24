@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function Contact({ h1className }) {
+export default function Contact({ textDivision }) {
   return (
     <>
-      <div className={h1className}>Email me here</div>
+      <div className={textDivision}>Email me here</div>
     </>
   );
 }

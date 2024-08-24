@@ -5,7 +5,7 @@ import "./App.css";
 import ImageDisplay from "./Components/ImageDisplay";
 import Button from "./Components/Button.js";
 import About from "./PageComponents/About";
-import BookLessons from "./PageComponents/BookLessons";
+import Bookings from "./PageComponents/Bookings.js";
 import Coaching from "./PageComponents/Coaching";
 import Contact from "./PageComponents/Contact";
 import New from "./PageComponents/New";
@@ -85,11 +85,22 @@ function App() {
               alt="Chantelle A'Court"
             />
             <div className="page-content-holder">
-              <div
-                className={`page-content ${
-                  isFlipping ? "flip-out" : "flip-in"
-                }`}
-              >
+              <div className="slide-bounce-mobile-container">
+                {currentComponent === "Book Lessons" && (
+                  <Bookings textDivision="slide-bounce" />
+                )}
+                {currentComponent === "New?" && (
+                  <New textDivision="slide-bounce" />
+                )}
+                {currentComponent === "Coaching" && (
+                  <Coaching textDivision="slide-bounce" />
+                )}
+                {currentComponent === "About" && (
+                  <About textDivision="slide-bounce" />
+                )}
+                {currentComponent === "Contact" && (
+                  <Contact textDivision="slide-bounce" />
+                )}
                 {/* Conditionally render Chantelle image if no component is selected */}
                 {!currentComponent && (
                   <div className="chantelle-image-container">
@@ -99,21 +110,6 @@ function App() {
                       className="chantelle-main-image"
                     />
                   </div>
-                )}
-                {currentComponent === "Book Lessons" && (
-                  <BookLessons h1className="slide-bounce" />
-                )}
-                {currentComponent === "New?" && (
-                  <New h1className="slide-bounce" />
-                )}
-                {currentComponent === "Coaching" && (
-                  <Coaching h1className="slide-bounce" />
-                )}
-                {currentComponent === "About" && (
-                  <About h1className="slide-bounce" />
-                )}
-                {currentComponent === "Contact" && (
-                  <Contact h1className="slide-bounce" />
                 )}
               </div>
             </div>
