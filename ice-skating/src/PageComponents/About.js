@@ -4,7 +4,7 @@ export default function About({ textDivision }) {
   return (
     <>
       <div className={textDivision}>
-        Hello and welcome! I'm an iceskating veteran coach of seven years now,
+        Hello and welcome! I'm an ice skating veteran coach of seven years now,
         and find great joy in the success of my pupils. <br />
         <br />
         Before coaching, I was often found doing professional ice shows across
