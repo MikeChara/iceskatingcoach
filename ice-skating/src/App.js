@@ -13,7 +13,6 @@ import New from "./PageComponents/New";
 function App() {
   const [showLanding, setShowLanding] = useState(true);
   const [currentComponent, setCurrentComponent] = useState(null); // Start with no component selected
-  const [isFlipping, setIsFlipping] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -21,15 +20,6 @@ function App() {
     }, 1000);
     return () => clearTimeout(timer);
   }, []);
-
-  const switchComponent = (componentName) => {
-    setIsFlipping(true);
-
-    setTimeout(() => {
-      setCurrentComponent(componentName);
-      setIsFlipping(false);
-    }, 1000); // This delay should match the flip animation duration
-  };
 
   return (
     <div className="App">
@@ -39,7 +29,7 @@ function App() {
         <div className="main-content">
           <div className="menu">
             <Button
-              onClick={() => switchComponent("Book Lessons")}
+              onClick={() => setCurrentComponent("Book Lessons")}
               text={window.innerWidth <= 768 ? "Bookings" : "Book Lessons"}
               className={
                 currentComponent === "Book Lessons"
@@ -48,7 +38,7 @@ function App() {
               }
             />
             <Button
-              onClick={() => switchComponent("New?")}
+              onClick={() => setCurrentComponent("New?")}
               text={
                 window.innerWidth <= 768 ? "Beginners" : "New to ice-skating?"
               }
@@ -57,21 +47,21 @@ function App() {
               }
             />
             <Button
-              onClick={() => switchComponent("Coaching")}
+              onClick={() => setCurrentComponent("Coaching")}
               text="Coaching"
               className={
                 currentComponent === "Coaching" ? "blue-button" : "menu-button"
               }
             />
             <Button
-              onClick={() => switchComponent("About")}
+              onClick={() => setCurrentComponent("About")}
               text={window.innerWidth <= 768 ? "Chantelle" : "About Chantelle"}
               className={
                 currentComponent === "About" ? "blue-button" : "menu-button"
               }
             />
             <Button
-              onClick={() => switchComponent("Contact")}
+              onClick={() => setCurrentComponent("Contact")}
               text="Contact"
               className={
                 currentComponent === "Contact" ? "blue-button" : "menu-button"
