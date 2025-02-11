@@ -11,7 +11,7 @@ import Contact from "./PageComponents/Contact";
 import New from "./PageComponents/New";
 
 function App() {
-  const [showLanding, setShowLanding] = useState(true);
+  const [showLanding, setShowLanding] = useState(true); // No routing choices made
   const [currentComponent, setCurrentComponent] = useState(null); // Start with no component selected
 
   useEffect(() => {
