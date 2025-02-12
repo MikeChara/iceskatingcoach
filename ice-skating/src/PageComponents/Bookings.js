@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Bookings() {
   return (
-    <div className="contact-form-wrapper">
+    <div>
       <h1>Booking Information</h1>
       <p>
         Calendar Booking will be coming soon. For now, just say hi and let me

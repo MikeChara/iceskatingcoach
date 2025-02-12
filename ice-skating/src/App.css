@@ -44,71 +44,49 @@ body {
   background-color: #0056b3;
 }
 
-/* Section Styling */
-section {
-  padding: 20px 10px;
-  /* Remove min-height to let content define its own height */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
+/* Shared Section Container */
+.section-container {
   width: 100%;
-  max-width: 1000px;
-}
-
-/* About Section */
-.about-section {
+  max-width: 800px; /* Consistent width for all sections */
+  margin: 10px auto; /* Centered and compact vertical margins */
+  padding: 15px 10px; /* Compact padding */
   background-color: #ffffff;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  padding: 15px 10px;
-  border-radius: 8px;
-  max-width: 800px;
-  margin: 10px auto;
+  border-radius: 6px;
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.about-section h1 {
+/* Typography within sections */
+.section-container h1 {
   font-size: 1.5rem;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
+  color: #007bff;
 }
 
-.about-section p {
+.section-container p {
   font-size: 1rem;
   line-height: 1.4;
   color: #333;
+  margin-bottom: 10px;
 }
 
-/* Bookings (Contact Form) */
-.contact-form-wrapper {
-  max-width: 600px;
-  margin: 10px auto;
-  padding: 15px;
-  background-color: #ffffff;
-  border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+/* Form Elements within sections (for the Bookings form, etc.) */
+.section-container form {
+  width: 100%;
 }
 
-.contact-form-wrapper h1 {
-  font-size: 1.5rem;
-  margin-bottom: 12px;
-}
-
-.contact-form-wrapper p {
-  font-size: 0.9rem;
-  margin-bottom: 12px;
-  color: #555;
-}
-
-.contact-form label {
+.section-container label {
   display: block;
   margin-bottom: 5px;
   font-weight: 600;
   font-size: 0.9rem;
 }
 
-.contact-form input,
-.contact-form textarea {
+.section-container input,
+.section-container textarea {
   width: 100%;
   padding: 8px;
   margin-bottom: 10px;
@@ -117,7 +95,7 @@ section {
   font-size: 0.9rem;
 }
 
-.contact-form button {
+.section-container button {
   padding: 10px 16px;
   border: none;
   border-radius: 4px;
@@ -128,72 +106,16 @@ section {
   transition: background-color 0.3s ease;
 }
 
-.contact-form button:hover {
+.section-container button:hover {
   background-color: #0056b3;
 }
 
-/* Coaching Section */
-.coaching-container {
-  max-width: 800px;
-  margin: 10px auto;
-  padding: 15px 10px;
-  background-color: #ffffff;
-  border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-.coaching-container h1 {
-  font-size: 1.5rem;
-  margin-bottom: 12px;
-}
-
-.coaching-container p {
-  font-size: 1rem;
-  line-height: 1.4;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-/* Contact Section */
-.text-division {
-  font-size: 1rem;
-  line-height: 1.4;
-  color: #333;
-  margin: 10px auto;
-}
-
-.text-division h2 {
-  font-size: 1.3rem;
-  color: #007bff;
-}
-
-.text-division a {
+/* Link Styling within sections */
+.section-container a {
   color: #007bff;
   text-decoration: none;
 }
 
-.text-division a:hover {
+.section-container a:hover {
   text-decoration: underline;
-}
-
-/* New Section */
-.new-section {
-  background-color: #ffffff;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  padding: 15px 10px;
-  border-radius: 8px;
-  max-width: 800px;
-  margin: 10px auto;
-  text-align: left;
-}
-
-.new-section h1 {
-  font-size: 1.5rem;
-  margin-bottom: 8px;
-}
-
-.new-section p {
-  font-size: 1rem;
-  line-height: 1.4;
-  color: #333;
 }

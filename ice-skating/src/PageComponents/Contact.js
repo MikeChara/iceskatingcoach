@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Contact() {
   return (
-    <div className="text-division">
+    <div>
       <h2>Contact Me</h2>
       <p>
         Email me at:{" "}

@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Coaching() {
   return (
-    <div className="coaching-container">
+    <div>
       <h1>Coaching Services</h1>
       <p>
         Age is not a factor; I've taught pupils of all ages! All that matters is

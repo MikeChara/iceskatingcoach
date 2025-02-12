@@ -2,7 +2,7 @@ import React from "react";
 
 export default function About() {
   return (
-    <div className="about-section">
+    <div>
       <h1>Welcome to My Skating World</h1>
       <p>
         Hello and welcome! I'm an ice skating veteran coach of seven years now,

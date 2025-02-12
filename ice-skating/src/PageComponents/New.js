@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function New({ textDivision }) {
+export default function New() {
   return (
     <>
-      <div className={textDivision}>
+      <div>
         If you're very new to skating, I'd love to take you onto the ice for the
         first time!
         <br />
