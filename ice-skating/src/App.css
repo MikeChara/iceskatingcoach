@@ -37,13 +37,39 @@ a:hover {
   color: #e05580; /* Darker pink on hover */
 }
 
-/* App Container */
+/* Prevent Horizontal Scrolling */
+html,
+body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Background Container */
+.background-container {
+  position: fixed; /* Fix the background */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Cover full viewport */
+  z-index: -1; /* Push behind content */
+  background: url("../public/chantelle2.jpg") no-repeat center center fixed,
+    url("../public/chantelle3.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-blend-mode: overlay;
+}
+
+/* App Container - Now Scrolls Instead of Body */
 .app-container {
   width: 100%;
-  max-width: 100vw; /* Ensure no horizontal overflow */
+  max-width: 100vw;
   min-height: 100vh;
-  background-color: transparent;
-  overflow-x: hidden;
+  overflow-y: auto; /* Enables scrolling */
+  position: relative;
+  z-index: 1;
 }
 
 /* Fixed Header */
