@@ -13,8 +13,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   /* Reference images with absolute paths */
-  background: url("../public/chantelle2.jpg") no-repeat center center fixed,
-    url("../public/chantelle3.jpg") no-repeat center center fixed;
+  background: url("../public/chantelle2.jpg") no-repeat center center fixed;
   background-blend-mode: overlay;
   background-size: cover;
   color: #ff6392; /* Warm Pink */
