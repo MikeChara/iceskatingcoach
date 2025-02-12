@@ -2,6 +2,10 @@ import React from "react";
 import "./App.css";
 import Coaching from "./PageComponents/Coaching";
 import Bookings from "./PageComponents/Bookings";
+import Contact from "./PageComponents/Contact";
+import New from "./PageComponents/New";
+import About from "./PageComponents/About";
+import NavButtons from "./Components/NavButtons"; // Import the new component
 
 const App = () => {
   const scrollToSection = (id) => {
@@ -10,21 +14,22 @@ const App = () => {
 
   return (
     <div className="app-container">
-      {/* Navigation buttons */}
-      <div className="nav-buttons">
-        <button onClick={() => scrollToSection("coaching")}>
-          Go to Coaching
-        </button>
-        <button onClick={() => scrollToSection("bookings")}>
-          Go to Bookings
-        </button>
-      </div>
+      <NavButtons scrollToSection={scrollToSection} />
 
+      <section id="about">
+        <About />
+      </section>
+      <section id="new">
+        <New />
+      </section>
       <section id="coaching">
         <Coaching />
       </section>
       <section id="bookings">
         <Bookings />
+      </section>
+      <section id="contact">
+        <Contact />
       </section>
     </div>
   );

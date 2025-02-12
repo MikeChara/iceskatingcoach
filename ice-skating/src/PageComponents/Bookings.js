@@ -1,15 +1,14 @@
 import React from "react";
 
-export default function Bookings({ textDivision }) {
+export default function Bookings() {
   return (
     <div className="contact-form-wrapper">
-      <h1 className={textDivision}>
+      <h1>Booking Information</h1>
+      <p>
         Calendar Booking will be coming soon. For now, just say hi and let me
-        know what sort of lessons you're interested in, with preferred
-        days/times. This form is a work in progress and is currently not secure.
-        Please do not add any personal information in your first message using
-        this form.
-      </h1>
+        know what sort of lessons you're interested in. Please do not add any
+        personal information in your first message using this form.
+      </p>
       <form
         action="mailto:chantelle@mikedoe.anonaddy.com"
         method="POST"
