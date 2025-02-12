@@ -3,37 +3,71 @@ body {
   font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f7fa;
   box-sizing: border-box;
+  /* Reference images with absolute paths */
+  background: url("../public/chantelle2.jpg") no-repeat center center fixed,
+    url("../public/chantelle3.jpg") no-repeat center center fixed;
+  background-blend-mode: overlay;
+  background-size: cover;
+  color: #ff6392; /* Warm Pink */
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+  color: #ff6392 !important; /* Warm Pink for all text */
+}
+
+a:hover {
+  color: #e05580; /* Darker pink on hover */
 }
 
 .app-container {
   width: 100%;
   min-height: 100vh;
-  overflow: auto;
-  background-color: #f4f7fa;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+  background-color: transparent;
 }
 
-/* Nav Buttons */
-.nav-buttons {
+/* Fixed Header */
+.header {
   position: fixed;
-  top: 10px;
-  right: 10px;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 20px;
   display: flex;
-  flex-direction: column;
-  gap: 8px;
+  justify-content: space-between;
+  align-items: center;
+  /* Semi-transparent background so the images show through */
+  background-color: rgba(244, 247, 250, 0.6);
   z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-title {
+  font-size: 1.5rem;
+  color: #007bff;
+  font-weight: bold;
+  color: #ff6392 !important; /* Warm Pink for all text */
+}
+
+/* Horizontal NavButtons */
+.nav-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  color: #ff6392 !important; /* Warm Pink for all text */
 }
 
 .nav-buttons button {
   padding: 8px 16px;
   border: none;
   border-radius: 4px;
-  background-color: #007bff;
+  background-color: #ff6392;
   color: white;
   font-size: 13px;
   cursor: pointer;
@@ -44,13 +78,19 @@ body {
   background-color: #0056b3;
 }
 
+/* Main Content - Ensure content starts below the header */
+.main-content {
+  margin-top: 70px; /* Adjust according to your header height */
+}
+
 /* Shared Section Container */
 .section-container {
   width: 100%;
   max-width: 800px; /* Consistent width for all sections */
   margin: 10px auto; /* Centered and compact vertical margins */
   padding: 15px 10px; /* Compact padding */
-  background-color: #ffffff;
+  /* Semi-transparent white background so the background images show through */
+  background-color: rgba(255, 255, 255, 0.7);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   border-radius: 6px;
   text-align: left;
@@ -73,7 +113,7 @@ body {
   margin-bottom: 10px;
 }
 
-/* Form Elements within sections (for the Bookings form, etc.) */
+/* Form Elements within sections */
 .section-container form {
   width: 100%;
 }
@@ -118,4 +158,19 @@ body {
 
 .section-container a:hover {
   text-decoration: underline;
+}
+
+button[type="submit"] {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #ff6392; /* Warm Pink */
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #e05580; /* Darker warm pink */
 }

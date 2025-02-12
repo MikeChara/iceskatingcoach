@@ -5,7 +5,7 @@ import Bookings from "./PageComponents/Bookings";
 import Contact from "./PageComponents/Contact";
 import New from "./PageComponents/New";
 import About from "./PageComponents/About";
-import NavButtons from "./Components/NavButtons"; // Import the new component
+import NavButtons from "./Components/NavButtons";
 
 const App = () => {
   const scrollToSection = (id) => {
@@ -14,23 +14,27 @@ const App = () => {
 
   return (
     <div className="app-container">
-      <NavButtons scrollToSection={scrollToSection} />
-
-      <section id="about" className="section-container">
-        <About />
-      </section>
-      <section id="new" className="section-container">
-        <New />
-      </section>
-      <section id="coaching" className="section-container">
-        <Coaching />
-      </section>
-      <section id="bookings" className="section-container">
-        <Bookings />
-      </section>
-      <section id="contact" className="section-container">
-        <Contact />
-      </section>
+      <header className="header">
+        <div className="header-title">Chantelle A' Court</div>
+        <NavButtons scrollToSection={scrollToSection} />
+      </header>
+      <main className="main-content">
+        <section id="about" className="section-container">
+          <About />
+        </section>
+        <section id="new" className="section-container">
+          <New />
+        </section>
+        <section id="coaching" className="section-container">
+          <Coaching />
+        </section>
+        <section id="bookings" className="section-container">
+          <Bookings />
+        </section>
+        <section id="contact" className="section-container">
+          <Contact />
+        </section>
+      </main>
     </div>
   );
 };
