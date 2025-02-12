@@ -3,7 +3,9 @@ import React from "react";
 export default function New() {
   return (
     <div>
-      <h1>New starters welcome</h1>
+      <div className="section-header">
+        <h1>New starters welcome</h1>
+      </div>
       <p>
         If you're new to skating, I'd love to take you onto the ice for the
         first time.

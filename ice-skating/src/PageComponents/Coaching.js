@@ -3,7 +3,9 @@ import React from "react";
 export default function Coaching() {
   return (
     <div>
-      <h1>Coaching Services</h1>
+      <div className="section-header">
+        <h1>Coaching Services</h1>
+      </div>
       <p>
         Age is not a factor; I've taught pupils of all ages. All that matters is
         a desire to improve and a joy of being on the ice. Each pupil has a

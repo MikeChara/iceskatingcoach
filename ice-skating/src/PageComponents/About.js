@@ -3,7 +3,9 @@ import React from "react";
 export default function About() {
   return (
     <div>
-      <h1>Welcome to My Skating World</h1>
+      <div className="section-header">
+        <h1>Welcome to My Skating World</h1>
+      </div>
       <p>
         Hello and welcome! I'm an ice skating veteran coach of seven years now,
         and I find great joy in the success of my pupils.

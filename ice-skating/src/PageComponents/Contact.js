@@ -3,7 +3,9 @@ import React from "react";
 export default function Contact() {
   return (
     <div>
-      <h2>Contact Me</h2>
+      <div className="section-header">
+        <h2>Contact Me</h2>
+      </div>
       <p>
         Email me at:{" "}
         <a href="mailto:chantelle@mikedoe.anonaddy.com">

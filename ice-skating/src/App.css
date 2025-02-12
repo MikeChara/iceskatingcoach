@@ -30,7 +30,7 @@ h6,
 p,
 a {
   color: #ff6392 !important; /* Warm Pink for all text */
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4); /* Light shadow */
+  /* Removed text shadow for cleaner, professional look */
 }
 
 a:hover {
@@ -124,14 +124,14 @@ a:hover {
 .section-container {
   width: 100%;
   max-width: 800px; /* Consistent width for all sections */
-  margin: 10px auto; /* Centered and compact vertical margins */
+  margin: 35px auto; /* Increased vertical margin for more space between sections */
   padding: 15px 10px; /* Compact padding */
   background-color: rgba(
     255,
     255,
     255,
-    0.7
-  ); /* Semi-transparent white background */
+    0.9
+  ); /* Slightly more transparent than opaque */
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   border-radius: 6px;
   text-align: left;
@@ -140,11 +140,20 @@ a:hover {
   align-items: center;
 }
 
+/* Section Header Divider */
+.section-header {
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 99, 146, 0.5); /* Subtle warm pink divider */
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+}
+
 /* Typography within Sections */
 .section-container h1 {
   font-size: 1.5rem;
   margin-bottom: 12px;
   color: #007bff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle drop shadow */
 }
 
 .section-container p {

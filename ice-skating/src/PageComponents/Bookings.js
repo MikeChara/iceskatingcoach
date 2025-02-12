@@ -58,7 +58,9 @@ export default function Bookings() {
 
   return (
     <div>
-      <h1>Booking Information</h1>
+      <div className="section-header">
+        <h1>Booking Information</h1>
+      </div>
       <p>
         Calendar Booking will be coming soon. For now, just say hi and let me
         know what sort of lessons you're interested in.
