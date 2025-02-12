@@ -147,16 +147,11 @@ body {
 
 /* Shared Section Container */
 .section-container {
-  width: 100%;
-  max-width: 800px; /* Consistent width for all sections */
-  margin: 35px auto; /* Increased vertical margin for more space between sections */
-  padding: 15px 10px; /* Compact padding */
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.9
-  ); /* Slightly more transparent than opaque */
+  width: 90%;
+  max-width: 800px; /* Ensures it doesn't stretch too wide on large screens */
+  margin: 35px auto; /* Centers the container with 35px vertical margins */
+  padding: 15px 10px;
+  background-color: rgba(255, 255, 255, 0.9);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   border-radius: 6px;
   text-align: left;
