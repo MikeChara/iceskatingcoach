@@ -17,7 +17,7 @@ const NavButtons = ({ scrollToSection }) => {
         <button onClick={() => scrollToSection("new")}>New</button>
         <button onClick={() => scrollToSection("coaching")}>Coaching</button>
         <button onClick={() => scrollToSection("bookings")}>Bookings</button>
-        <button onClick={() => scrollToSection("contact")}>Contact</button>
+        {/* <button onClick={() => scrollToSection("contact")}>Contact</button> */}
       </div>
     </nav>
   );
