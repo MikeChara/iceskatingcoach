@@ -31,9 +31,9 @@ const App = () => {
         <section id="bookings" className="section-container">
           <Bookings />
         </section>
-        <section id="contact" className="section-container">
+        {/* <section id="contact" className="section-container">
           <Contact />
-        </section>
+        </section> */}
       </main>
     </div>
   );

@@ -2,10 +2,11 @@ import React from "react";
 
 export default function New() {
   return (
-    <>
-      <div>
-        If you're very new to skating, I'd love to take you onto the ice for the
-        first time!
+    <div>
+      <h1>New starters welcome</h1>
+      <p>
+        If you're new to skating, I'd love to take you onto the ice for the
+        first time.
         <br />
         <br />
         It can be daunting to put on the skates, but once on, and with some
@@ -15,8 +16,8 @@ export default function New() {
         <br />
         It's also great to just get down to an ice arena, get some hired skates
         on, maybe even a guide penguin (you'll know it when you see it!) and
-        give it a go!
-      </div>
-    </>
+        give it a go.
+      </p>
+    </div>
   );
 }
