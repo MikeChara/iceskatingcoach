@@ -19,13 +19,13 @@ const App = () => {
         <NavButtons scrollToSection={scrollToSection} />
       </header>
       <main className="main-content">
-        <section id="about" className="section-container">
+        <section id="about" className="section-container about-section">
           <About />
         </section>
-        <section id="new" className="section-container">
+        <section id="new" className="section-container new-section">
           <New />
         </section>
-        <section id="coaching" className="section-container">
+        <section id="coaching" className="section-container coaching-section">
           <Coaching />
         </section>
         <section id="bookings" className="section-container">
