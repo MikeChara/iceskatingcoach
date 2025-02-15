@@ -271,16 +271,3 @@ button[type="submit"]:hover {
     display: block;
   }
 }
-
-/* Override text color for specific sections */
-.about-section * {
-  color: navy !important;
-}
-
-.new-section * {
-  color: black !important;
-}
-
-.coaching-section * {
-  color: hotpink !important;
-}
