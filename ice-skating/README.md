@@ -1,3 +1,5 @@
+This web application is written as a hobby project for the ice skating coach Chantelle A' Court in Slough. Feedback welcome.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
