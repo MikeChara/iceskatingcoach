@@ -1,17 +1,29 @@
-import React from "react";
+import React, { useState, lazy, Suspense } from "react";
 import "./App.css";
-import Coaching from "./PageComponents/Coaching";
-import Bookings from "./PageComponents/Bookings";
-import Contact from "./PageComponents/Contact";
-import New from "./PageComponents/New";
-import About from "./PageComponents/About";
-import NavButtons from "./Components/NavButtons";
+import LazyLoadSection from "./Components/LazyLoadSection";
+
+// Lazy load the page components
+const Coaching = lazy(() => import("./PageComponents/Coaching"));
+const Bookings = lazy(() => import("./PageComponents/Bookings"));
+const Contact = lazy(() => import("./PageComponents/Contact"));
+const New = lazy(() => import("./PageComponents/New"));
+const About = lazy(() => import("./PageComponents/About"));
 
 const App = () => {
+  const [MOBILE_NAV_OPEN, SET_MOBILE_NAV_OPEN] = useState(false);
+
+  const TOGGLE_MOBILE_NAV = () => {
+    SET_MOBILE_NAV_OPEN((prev) => !prev);
+  };
+
   const scrollToSection = (ID) => {
     const TARGET = document.getElementById(ID);
     if (TARGET) {
       TARGET.scrollIntoView({ behavior: "smooth" });
+    }
+    // Close mobile nav if open
+    if (MOBILE_NAV_OPEN) {
+      SET_MOBILE_NAV_OPEN(false);
     }
   };
 
@@ -19,36 +31,56 @@ const App = () => {
     <div className="app-container">
       <header className="header">
         <div className="logo">Chantelle A' Court</div>
-        <NavButtons scrollToSection={scrollToSection} />
+        <nav className="nav-container">
+          <div className={`nav-buttons ${MOBILE_NAV_OPEN ? "open" : ""}`}>
+            <button onClick={() => scrollToSection("hero")}>Home</button>
+            <button onClick={() => scrollToSection("about")}>About</button>
+            <button onClick={() => scrollToSection("new")}>New</button>
+            <button onClick={() => scrollToSection("coaching")}>
+              Coaching
+            </button>
+            <button onClick={() => scrollToSection("bookings")}>
+              Bookings
+            </button>
+          </div>
+          <button className="burger-menu" onClick={TOGGLE_MOBILE_NAV}>
+            &#9776;
+          </button>
+        </nav>
       </header>
       <main className="main-content">
         {/* Hero Section */}
         <section id="hero" className="hero-section">
           <div className="hero-overlay">
             <h1>Inspire Your Journey</h1>
-            <p>Empowering you to achieve your highest potential.</p>
+            <p>Unlock your potential</p>
             <button onClick={() => scrollToSection("about")}>Learn More</button>
           </div>
         </section>
 
-        {/* Main Sections */}
-        <section id="about" className="section-container">
-          <About />
-        </section>
-        <section id="new" className="section-container">
-          <New />
-        </section>
-        <section id="coaching" className="section-container">
-          <Coaching />
-        </section>
-        <section id="bookings" className="section-container">
-          <Bookings />
-        </section>
-        {/*
-        <section id="contact" className="section-container">
-          <Contact />
-        </section>
-        */}
+        <Suspense fallback={<div className="lazy-loading">Loading...</div>}>
+          <LazyLoadSection id="about" className="section-container">
+            <About />
+          </LazyLoadSection>
+
+          <LazyLoadSection id="new" className="section-container">
+            <New />
+          </LazyLoadSection>
+
+          <LazyLoadSection id="coaching" className="section-container">
+            <Coaching />
+          </LazyLoadSection>
+
+          <LazyLoadSection id="bookings" className="section-container">
+            <Bookings />
+          </LazyLoadSection>
+
+          {/*
+          <LazyLoadSection id="contact" className="section-container">
+            <Contact />
+          </LazyLoadSection>
+          */}
+        </Suspense>
       </main>
     </div>
   );
