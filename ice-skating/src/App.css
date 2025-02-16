@@ -1,79 +1,27 @@
 :root {
-  --main-theme: navy;
-  --main-theme-hover: blue;
+  --main-theme: #1a1a1a; /* Dark text colour */
+  --accent-color: #007bff; /* Primary blue accent */
+  --accent-hover: #0056b3;
+  --background-light: #f7f7f7; /* Light background for content areas */
 }
 
-/* Prevent Horizontal Scrolling */
-html,
-body {
-  width: 100%;
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-/* General Styles */
-body {
-  font-family: "Montserrat", sans-serif;
+/* Reset & Global Styles */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* Reference images with absolute paths */
-  background: url("../public/chantelle2.jpg") no-repeat center center fixed;
-  background-blend-mode: overlay;
-  background-size: cover;
-  color: var(--main-theme);
 }
 
-/* Typography Colors and Shadows */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-a {
-  color: var(--main-theme) !important;
-  /* Removed text shadow for cleaner, professional look */
-}
-
-a:hover {
-  color: var(--main-theme-hover);
-}
-
-/* Prevent Horizontal Scrolling */
-html,
 body {
-  width: 100%;
-  max-width: 100vw;
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--background-light);
+  color: var(--main-theme);
   overflow-x: hidden;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
 }
 
-/* Background Container */
-.background-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: -1;
-  background: url("../public/chantelle2.jpg") no-repeat center center fixed,
-    url("../public/chantelle3.jpg") no-repeat center center fixed;
-  background-size: cover;
-  background-blend-mode: overlay;
-}
-
-/* App Container - Now Scrolls Instead of Body */
+/* App Container */
 .app-container {
   width: 100%;
-  max-width: 100vw;
-  min-height: 100vh;
-  overflow-y: auto;
-  position: relative;
-  z-index: 1;
 }
 
 /* Fixed Header */
@@ -81,192 +29,135 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  width: 100vw;
-  box-sizing: border-box;
-  padding: 8px 20px;
+  width: 100%;
+  padding: 20px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
+  background: rgba(255, 255, 255, 0.95);
   z-index: 1000;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Header Title */
-.header-title {
-  font-size: 1.5rem;
+.logo {
+  font-size: 1.8rem;
   font-weight: bold;
-  color: var(--main-theme) !important;
+  color: var(--main-theme);
 }
 
-/* Navigation Container */
-.nav-container {
+/* Main Content (accounting for fixed header) */
+.main-content {
+  margin-top: 80px;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  background: url("../public/chantelle2.jpg") no-repeat center center/cover;
   display: flex;
   align-items: center;
-  position: relative;
+  justify-content: center;
 }
 
-/* Horizontal NavButtons (Desktop) */
-.nav-buttons {
-  display: flex;
-  flex-direction: row;
-  gap: 8px;
-  color: var(--main-theme) !important;
+.hero-overlay {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay for readability */
+  padding: 20px 40px;
+  border-radius: 8px;
+  color: #fff;
 }
 
-/* Navigation Buttons Styling */
-.nav-buttons button {
-  padding: 8px 16px;
+.hero-overlay h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero-overlay p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.hero-overlay button {
+  padding: 12px 24px;
+  font-size: 1rem;
   border: none;
   border-radius: 4px;
-  background-color: var(--main-theme);
-  color: white;
-  font-size: 13px;
+  background-color: var(--accent-color);
+  color: #fff;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.nav-buttons button:hover {
-  background-color: var(--main-theme-hover);
+.hero-overlay button:hover {
+  background-color: var(--accent-hover);
 }
 
-/* Burger Menu (Hidden by Default on Large Screens) */
-.burger-menu {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  color: var(--main-theme);
-  padding: 5px;
-}
-
-/* Main Content */
-.main-content {
-  margin-top: 70px;
-  width: 100%;
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-/* Shared Section Container */
+/* Section Container Styles */
 .section-container {
-  width: 90%; /* Using 90% of viewport width for consistency */
+  width: 90%;
   max-width: 800px;
-  margin: 35px auto;
-  padding: 15px 10px;
-  background-color: rgba(255, 255, 255, 0.9);
+  margin: 60px auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 6px;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
-/* Section Header Divider */
-.section-header {
-  width: 100%;
-  border-bottom: 1px solid rgba(251, 113, 133, 0.5);
-  padding-bottom: 8px;
-  margin-bottom: 16px;
-}
-
-/* Typography within Sections */
 .section-container h1 {
-  font-size: 1.5rem;
-  margin-bottom: 12px;
-  color: #007bff;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--accent-color);
 }
 
 .section-container p {
   font-size: 1rem;
-  line-height: 1.4;
-  color: #333;
-  margin-bottom: 10px;
+  line-height: 1.6;
+  margin-bottom: 20px;
 }
 
-/* Form Elements within Sections */
-.section-container form {
-  width: 100%;
+/* Navigation Buttons (Assuming NavButtons component applies these classes) */
+.nav-buttons {
+  display: flex;
+  gap: 16px;
 }
 
-.section-container label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-.section-container input,
-.section-container textarea {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 0.9rem;
-}
-
-/* Section Button Styling */
-.section-container button {
-  padding: 10px 16px;
+.nav-buttons button {
+  background: none;
   border: none;
-  border-radius: 4px;
-  background-color: #007bff;
-  color: white;
-  font-size: 14px;
+  font-size: 1rem;
+  color: var(--main-theme);
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  padding: 8px 12px;
+  transition: color 0.3s ease;
 }
 
-.section-container button:hover {
-  background-color: #0056b3;
+.nav-buttons button:hover {
+  color: var(--accent-color);
 }
 
-/* Link Styling within Sections */
-.section-container a {
-  color: #007bff;
-  text-decoration: none;
+/* Burger Menu for Mobile (if applicable) */
+.burger-menu {
+  display: none;
 }
 
-.section-container a:hover {
-  text-decoration: underline;
-}
-
-/* Submit Button Styling */
-button[type="submit"] {
-  padding: 10px 16px;
-  border: none;
-  border-radius: 4px;
-  background-color: var(--main-theme);
-  color: white;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-button[type="submit"]:hover {
-  background-color: var(--main-theme-hover);
-}
-
+/* Responsive Adjustments */
 @media (max-width: 768px) {
+  .header {
+    padding: 10px 20px;
+  }
+
   .nav-buttons {
-    display: none;
     flex-direction: column;
+    background: #fff;
     position: absolute;
-    top: 50px;
-    right: 10px;
-    background: rgba(255, 255, 255, 0.9);
+    top: 60px;
+    right: 20px;
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   }
-  .nav-buttons.open {
-    display: flex;
-  }
+
   .burger-menu {
     display: block;
   }

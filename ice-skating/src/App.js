@@ -8,17 +8,30 @@ import About from "./PageComponents/About";
 import NavButtons from "./Components/NavButtons";
 
 const App = () => {
-  const scrollToSection = (id) => {
-    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+  const scrollToSection = (ID) => {
+    const TARGET = document.getElementById(ID);
+    if (TARGET) {
+      TARGET.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
     <div className="app-container">
       <header className="header">
-        <div className="header-title">Chantelle A' Court</div>
+        <div className="logo">Chantelle A' Court</div>
         <NavButtons scrollToSection={scrollToSection} />
       </header>
       <main className="main-content">
+        {/* Hero Section */}
+        <section id="hero" className="hero-section">
+          <div className="hero-overlay">
+            <h1>Inspire Your Journey</h1>
+            <p>Empowering you to achieve your highest potential.</p>
+            <button onClick={() => scrollToSection("about")}>Learn More</button>
+          </div>
+        </section>
+
+        {/* Main Sections */}
         <section id="about" className="section-container">
           <About />
         </section>
@@ -31,9 +44,11 @@ const App = () => {
         <section id="bookings" className="section-container">
           <Bookings />
         </section>
-        {/* <section id="contact" className="section-container">
+        {/*
+        <section id="contact" className="section-container">
           <Contact />
-        </section> */}
+        </section>
+        */}
       </main>
     </div>
   );
