@@ -54,7 +54,9 @@ const App = () => {
           <div className="hero-overlay">
             <h1>Inspire Your Journey</h1>
             <p>Unlock your potential</p>
-            <button onClick={() => scrollToSection("about")}>Learn More</button>
+            <button onClick={() => scrollToSection("about")}>
+              Learn ice skating
+            </button>
           </div>
         </section>
 
