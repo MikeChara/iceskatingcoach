@@ -9,12 +9,12 @@ export default function About() {
       <p>
         Hello and welcome! I'm an ice skating veteran coach of seven years now,
         and I find great joy in the success of my pupils.
-        <br />
-        <br />
+      </p>
+      <p>
         Before coaching, I was often found doing professional ice shows across
         Europe and within the UK.
-        <br />
-        <br />
+      </p>
+      <p>
         I'm active in skating competitions around the world, and have been for
         many years. I particularly enjoy the choreographing.
       </p>
