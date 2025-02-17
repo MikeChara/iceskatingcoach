@@ -6,21 +6,16 @@ export default function About() {
       <div className="section-header">
         <h1>Welcome to My Skating World</h1>
       </div>
+      <p>Hello! I'm Chantelle, an ice skating coach. Pleased to meet you.</p>
       <p>
-        Hello and welcome! I'm an ice skating veteran coach of seven years now,
-        and I find great joy in the success of my pupils.
+        Before coaching, you could find me at professional ice shows and
+        competitions across Europe. I'm still active in those arenas, but I've
+        since found a new way to enjoy the ice.
       </p>
       <p>
-        Before coaching, I was often found doing professional ice shows across
-        Europe and within the UK.
-      </p>
-      <p>
-        I'm active in skating competitions around the world, and have been for
-        many years. I particularly enjoy the choreographing.
-      </p>
-      <p>
-        The joy of competing myself is only matched by seeing the success of my
-        pupils in their own competitions!
+        I've been coaching and taking on students for several years now, and can
+        say the joy of competing myself is only matched by seeing the success of
+        those I teach. Let me join you, on your journey!
       </p>
     </div>
   );
