@@ -86,6 +86,7 @@ const App = () => {
           </LazyLoadSection>
 
           <LazyLoadSection id="gallery" className="section-container">
+            <h1>Gallery</h1>
             <Gallery Images={IMAGE_ARRAY} Interval={5000} />
           </LazyLoadSection>
           {/*

@@ -212,43 +212,45 @@ body {
   color: var(--main-theme);
 }
 
+/* Carousel Container maintains a fixed aspect ratio */
 .carousel {
   position: relative;
   overflow: hidden;
   width: 100%;
-  max-width: 800px; /* or your desired max width */
+  max-width: 800px; /* Max width for larger screens */
+  aspect-ratio: 2 / 1; /* Maintains a 2:1 ratio (e.g., 800px by 400px) */
   margin: 0 auto;
+  background-color: #f0f0f0; /* Optional: background color for letterboxing */
 }
 
+/* Each carousel item occupies the full container */
 .carousel-item {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
+  height: 100%;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
 }
 
+/* The active slide is visible */
 .carousel-item.active {
   opacity: 1;
   position: relative;
 }
 
-.carousel-container {
+/* Ensure images scale to fit the container without cropping */
+.carousel img {
   width: 100%;
-  max-width: 800px; /* Fixed width */
-  height: 400px; /* Fixed height */
-  overflow: hidden;
-  margin: 0 auto;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.05); /* Optional: uniform background */
+  height: 100%;
+  object-fit: contain; /* Switch from cover to contain */
 }
 
-.carousel-container img {
-  width: 800px; /* Fixed width */
-  height: 400px; /* Fixed height */
-  object-fit: cover; /* Crops images to fit perfectly */
+/* Responsive adjustments for smaller devices */
+@media (max-width: 600px) {
+  .carousel {
+    max-width: 100%;
+    /* The aspect-ratio ensures height scales automatically */
+  }
 }
