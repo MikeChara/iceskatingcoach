@@ -12,6 +12,7 @@ const Carousel = ({ Images, Interval = 3000 }) => {
 
   return (
     <div className="carousel">
+      <h1>Gallery</h1>
       {Images.map((Image, Index) => (
         <div
           key={Index}

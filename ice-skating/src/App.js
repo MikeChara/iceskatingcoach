@@ -1,7 +1,6 @@
 import React, { useState, lazy, Suspense } from "react";
 import "./App.css";
 import LazyLoadSection from "./Components/LazyLoadSection";
-import Carousel from "./Components/Carousel";
 
 // Lazy load the page components
 const Coaching = lazy(() => import("./PageComponents/Coaching"));
@@ -9,6 +8,7 @@ const Bookings = lazy(() => import("./PageComponents/Bookings"));
 const Contact = lazy(() => import("./PageComponents/Contact"));
 const New = lazy(() => import("./PageComponents/New"));
 const About = lazy(() => import("./PageComponents/About"));
+const Gallery = lazy(() => import("./PageComponents/Gallery"));
 
 const IMAGE_ARRAY = [
   { src: "/Media/chantelle3.jpg", alt: "New starters learning" },
@@ -49,6 +49,7 @@ const App = () => {
             <button onClick={() => scrollToSection("bookings")}>
               Bookings
             </button>
+            <button onClick={() => scrollToSection("gallery")}>Gallery</button>
           </div>
           <button className="burger-menu" onClick={TOGGLE_MOBILE_NAV}>
             &#9776;
@@ -84,9 +85,8 @@ const App = () => {
             <Bookings />
           </LazyLoadSection>
 
-          <LazyLoadSection id="carousel" className="section-container">
-            <h1>Gallery</h1>
-            <Carousel Images={IMAGE_ARRAY} Interval={5000} />
+          <LazyLoadSection id="gallery" className="section-container">
+            <Gallery Images={IMAGE_ARRAY} Interval={5000} />
           </LazyLoadSection>
           {/*
           <LazyLoadSection id="contact" className="section-container">
