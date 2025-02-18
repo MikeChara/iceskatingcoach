@@ -103,12 +103,12 @@ body {
   margin-top: 80px;
 }
 
-/* Hero Section */
+/* Hero Section with Parallax Effect */
 .hero-section {
   position: relative;
   height: 100vh;
-  /* Default for monitors: chantelle2 */
   background: url("../public/chantelle2.jpg") no-repeat center center/cover;
+  background-attachment: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -116,9 +116,9 @@ body {
 
 @media (max-width: 768px) {
   .hero-section {
-    /* For phones: chantelle-hero-image */
     background: url("../public/chantelle-hero-image.jpg") no-repeat center
       center/cover;
+    background-attachment: scroll; /* Disable parallax on mobile for performance */
   }
 }
 
@@ -155,7 +155,7 @@ body {
   background-color: var(--accent-hover);
 }
 
-/* Section Container Styles (Reverted to Original Background) */
+/* Section Container Styles with Alternating Backgrounds */
 .section-container {
   width: 90%;
   max-width: 800px;
@@ -163,7 +163,21 @@ body {
   padding: 30px;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.9); /* Default background */
+}
+
+.section-container h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--accent-color);
+  display: inline-block; /* Ensures the underline matches the text width */
+  padding-bottom: 4px; /* Optional spacing between text and underline */
+  border-bottom: 1px solid var(--accent-color);
+}
+
+/* Alternate background for even sections */
+.main-content > .section-container:nth-of-type(even) {
+  background-color: #f0f0f0;
 }
 
 .section-container h1 {
@@ -190,14 +204,7 @@ body {
   transform: translateY(0);
 }
 
-.loading-placeholder {
-  padding: 40px;
-  text-align: center;
-  color: var(--main-theme);
-  font-size: 1.2rem;
-}
-
-/* Fallback styling for Suspense loading */
+.loading-placeholder,
 .lazy-loading {
   padding: 40px;
   text-align: center;

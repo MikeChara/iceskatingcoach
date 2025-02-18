@@ -1,27 +1,28 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
-const LazyLoadSection = ({ children, id, className = "" }) => {
-  const [IsVisible, SET_IS_VISIBLE] = useState(false);
+const LazyLoadSection = ({ id, className, children }) => {
   const REF = useRef(null);
+  const [IS_VISIBLE, SET_IS_VISIBLE] = useState(false);
 
   useEffect(() => {
     const OBSERVER = new IntersectionObserver(
-      (ENTRIES) => {
+      (ENTRIES, OBSERVER_INSTANCE) => {
         ENTRIES.forEach((ENTRY) => {
           if (ENTRY.isIntersecting) {
-            // Add a 250ms delay before marking as visible so it looks cool
-            setTimeout(() => {
-              SET_IS_VISIBLE(true);
-              OBSERVER.disconnect();
-            }, 250);
+            SET_IS_VISIBLE(true);
+            OBSERVER_INSTANCE.unobserve(ENTRY.target);
           }
         });
       },
-      { threshold: 0.2 }
+      {
+        threshold: 0.2,
+      }
     );
+
     if (REF.current) {
       OBSERVER.observe(REF.current);
     }
+
     return () => {
       if (REF.current) {
         OBSERVER.unobserve(REF.current);
@@ -33,13 +34,9 @@ const LazyLoadSection = ({ children, id, className = "" }) => {
     <section
       id={id}
       ref={REF}
-      className={`${className} lazy-section ${IsVisible ? "visible" : ""}`}
+      className={`${className} lazy-section ${IS_VISIBLE ? "visible" : ""}`}
     >
-      {IsVisible ? (
-        children
-      ) : (
-        <div className="loading-placeholder">Loading...</div>
-      )}
+      {children}
     </section>
   );
 };
