@@ -1,6 +1,7 @@
 import React, { useState, lazy, Suspense } from "react";
 import "./App.css";
 import LazyLoadSection from "./Components/LazyLoadSection";
+import Carousel from "./Components/Carousel";
 
 // Lazy load the page components
 const Coaching = lazy(() => import("./PageComponents/Coaching"));
@@ -8,6 +9,12 @@ const Bookings = lazy(() => import("./PageComponents/Bookings"));
 const Contact = lazy(() => import("./PageComponents/Contact"));
 const New = lazy(() => import("./PageComponents/New"));
 const About = lazy(() => import("./PageComponents/About"));
+
+const IMAGE_ARRAY = [
+  { src: "/Media/chantelle3.jpg", alt: "New starters learning" },
+  { src: "/Media/chantelle2.jpg", alt: "Ice skating basics" },
+  { src: "/Media/Ice-Arena-photo.jpg", alt: "Group coaching session" },
+];
 
 const App = () => {
   const [MOBILE_NAV_OPEN, SET_MOBILE_NAV_OPEN] = useState(false);
@@ -77,6 +84,10 @@ const App = () => {
             <Bookings />
           </LazyLoadSection>
 
+          <LazyLoadSection id="carousel" className="section-container">
+            <h1>Gallery</h1>
+            <Carousel Images={IMAGE_ARRAY} Interval={5000} />
+          </LazyLoadSection>
           {/*
           <LazyLoadSection id="contact" className="section-container">
             <Contact />
