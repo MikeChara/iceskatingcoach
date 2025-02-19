@@ -26,7 +26,15 @@ const App = () => {
   const scrollToSection = (ID) => {
     const TARGET = document.getElementById(ID);
     if (TARGET) {
-      TARGET.scrollIntoView({ behavior: "smooth" });
+      // Get the height of the header
+      const HEADER_HEIGHT = document.querySelector(".header").offsetHeight;
+      // Calculate the position of the target element
+      const TARGET_POSITION =
+        TARGET.getBoundingClientRect().top + window.pageYOffset - HEADER_HEIGHT;
+      window.scrollTo({
+        top: TARGET_POSITION,
+        behavior: "smooth",
+      });
     }
     // Close mobile nav if open
     if (MOBILE_NAV_OPEN) {
