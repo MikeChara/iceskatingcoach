@@ -10,11 +10,9 @@ const New = lazy(() => import("./PageComponents/New"));
 const About = lazy(() => import("./PageComponents/About"));
 const Gallery = lazy(() => import("./PageComponents/Gallery"));
 
-const IMAGE_ARRAY = [
-  { src: "/Media/chantelle3.jpg", alt: "New starters learning" },
-  { src: "/Media/chantelle2.jpg", alt: "Ice skating basics" },
-  { src: "/Media/Ice-Arena-photo.jpg", alt: "Group coaching session" },
-];
+const IMAGE_ARRAY = IMPORT_ALL_IMAGES(
+  require.context("./Media", false, /\.(png|jpe?g|svg)$/)
+);
 
 const App = () => {
   const [MOBILE_NAV_OPEN, SET_MOBILE_NAV_OPEN] = useState(false);
@@ -107,5 +105,17 @@ const App = () => {
     </div>
   );
 };
+
+// helper function to import all images from a folder
+function IMPORT_ALL_IMAGES(R) {
+  return R.keys().map((FILE_NAME) => {
+    const SRC = R(FILE_NAME);
+    // Generate alt text by removing the "./" and file extension, then replace hyphens with spaces
+    const ALT = FILE_NAME.replace("./", "")
+      .replace(/\.[^/.]+$/, "")
+      .replace(/-/g, " ");
+    return { src: SRC, alt: ALT };
+  });
+}
 
 export default App;
