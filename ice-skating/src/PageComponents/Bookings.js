@@ -63,46 +63,10 @@ export default function Bookings() {
       </div>
       <p>
         Calendar Booking will be coming soon. For now, just say hi and let me
-        know what sort of lessons you're interested in.
+        know what sort of lessons you're interested in. You can email me here:
+        <br></br>
+        <p>chantelle@mikedoe.anonaddy.com</p>
       </p>
-
-      {formError && <p style={{ color: "red" }}>{formError}</p>}
-
-      <form onSubmit={handleSubmit} className="contact-form">
-        <label htmlFor="name">Name:</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={formData.name}
-          onChange={handleInputChange}
-          placeholder="Your Name"
-          required
-        />
-
-        <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={formData.email}
-          onChange={handleInputChange}
-          placeholder="Your Email"
-          required
-        />
-
-        <label htmlFor="message">Message:</label>
-        <textarea
-          id="message"
-          name="message"
-          value={formData.message}
-          onChange={handleInputChange}
-          placeholder="Your Message"
-          required
-        ></textarea>
-
-        <button type="submit">Send</button>
-      </form>
     </div>
   );
 }
