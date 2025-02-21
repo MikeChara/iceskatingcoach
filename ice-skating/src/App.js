@@ -1,4 +1,4 @@
-import React, { useState, lazy, Suspense } from "react";
+import React, { useState, lazy, Suspense, useEffect } from "react";
 import "./App.css";
 import LazyLoadSection from "./Components/LazyLoadSection";
 
@@ -16,6 +16,16 @@ const IMAGE_ARRAY = IMPORT_ALL_IMAGES(
 
 const App = () => {
   const [MOBILE_NAV_OPEN, SET_MOBILE_NAV_OPEN] = useState(false);
+  const [SCROLLED, SET_SCROLLED] = useState(false);
+
+  useEffect(() => {
+    const HANDLE_SCROLL = () => {
+      SET_SCROLLED(window.scrollY > 0);
+    };
+
+    window.addEventListener("scroll", HANDLE_SCROLL);
+    return () => window.removeEventListener("scroll", HANDLE_SCROLL);
+  }, []);
 
   const TOGGLE_MOBILE_NAV = () => {
     SET_MOBILE_NAV_OPEN((prev) => !prev);
@@ -42,7 +52,7 @@ const App = () => {
 
   return (
     <div className="app-container">
-      <header className="header">
+      <header className={`header ${SCROLLED ? "scrolled" : ""}`}>
         <div className="logo">Chantelle A' Court</div>
         <nav className="nav-container">
           <div className={`nav-buttons ${MOBILE_NAV_OPEN ? "open" : ""}`}>
@@ -95,11 +105,6 @@ const App = () => {
             <h1>Gallery</h1>
             <Gallery Images={IMAGE_ARRAY} Interval={5000} />
           </LazyLoadSection>
-          {/*
-          <LazyLoadSection id="contact" className="section-container">
-            <Contact />
-          </LazyLoadSection>
-          */}
         </Suspense>
       </main>
     </div>

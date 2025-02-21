@@ -254,3 +254,14 @@ body {
     /* The aspect-ratio ensures height scales automatically */
   }
 }
+
+.header.scrolled {
+  background: var(--accent-color); /* Blue background */
+  color: var(--background-light); /* White text */
+}
+
+.header.scrolled .logo,
+.header.scrolled .nav-buttons button,
+.header.scrolled .burger-menu {
+  color: var(--background-light);
+}
