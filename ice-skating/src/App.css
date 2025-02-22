@@ -255,6 +255,12 @@ body {
   }
 }
 
+@media (max-width: 768px) {
+  .header.scrolled .nav-buttons {
+    background: var(--accent-color);
+  }
+}
+
 .header.scrolled {
   background: var(--accent-color); /* Blue background */
   color: var(--background-light); /* White text */
