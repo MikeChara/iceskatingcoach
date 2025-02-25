@@ -103,7 +103,6 @@ body {
   margin-top: 80px;
 }
 
-/* Hero Section with Parallax Effect */
 .hero-section {
   position: relative;
   height: 100vh;
@@ -247,11 +246,9 @@ body {
   object-fit: contain; /* Switch from cover to contain */
 }
 
-/* Responsive adjustments for smaller devices */
 @media (max-width: 600px) {
   .carousel {
     max-width: 100%;
-    /* The aspect-ratio ensures height scales automatically */
   }
 }
 
@@ -262,8 +259,8 @@ body {
 }
 
 .header.scrolled {
-  background: var(--accent-color); /* Blue background */
-  color: var(--background-light); /* White text */
+  background: var(--accent-color);
+  color: var(--background-light);
 }
 
 .header.scrolled .logo,
