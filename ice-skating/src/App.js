@@ -38,7 +38,7 @@ const App = () => {
       const HEADER_HEIGHT = document.querySelector(".header").offsetHeight;
       // Calculate the position of the target element
       const TARGET_POSITION =
-        TARGET.getBoundingClientRect().top + window.pageYOffset - HEADER_HEIGHT;
+        TARGET.getBoundingClientRect().top + window.scrollY - HEADER_HEIGHT;
       window.scrollTo({
         top: TARGET_POSITION,
         behavior: "smooth",
