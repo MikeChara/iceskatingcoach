@@ -216,10 +216,9 @@ body {
   position: relative;
   overflow: hidden;
   width: 100%;
-  max-width: 800px; /* Max width for larger screens */
+  max-width: 100%; /* Max width for larger screens */
   aspect-ratio: 2 / 1; /* Maintains a 2:1 ratio (e.g., 800px by 400px) */
   margin: 0 auto;
-  background-color: #f0f0f0; /* Optional: background color for letterboxing */
 }
 
 /* Each carousel item occupies the full container */
@@ -267,4 +266,17 @@ body {
 .header.scrolled .nav-buttons button,
 .header.scrolled .burger-menu {
   color: var(--background-light);
+}
+
+.gallery-page {
+  width: 100%;
+  max-width: none;
+  margin: 60px auto;
+  padding: 0;
+}
+
+.gallery-title {
+  text-align: center;
+  color: var(--accent-color);
+  margin: 40px 0 20px;
 }

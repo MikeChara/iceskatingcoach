@@ -1,126 +1,152 @@
 import React, { useState, lazy, Suspense, useEffect } from "react";
 import "./App.css";
 import LazyLoadSection from "./Components/LazyLoadSection";
+import Gallery from "./PageComponents/Gallery";
 
-// Lazy load the page components
+// lazy-loaded page bits
 const Coaching = lazy(() => import("./PageComponents/Coaching"));
 const Bookings = lazy(() => import("./PageComponents/Bookings"));
-const Contact = lazy(() => import("./PageComponents/Contact"));
 const New = lazy(() => import("./PageComponents/New"));
 const About = lazy(() => import("./PageComponents/About"));
-const Gallery = lazy(() => import("./PageComponents/Gallery"));
 
-const IMAGE_ARRAY = IMPORT_ALL_IMAGES(
+const IMAGE_ARRAY = importAllImages(
   require.context("./Media", false, /\.(png|jpe?g|svg)$/)
 );
 
+function importAllImages(r) {
+  return r.keys().map((fileName) => {
+    const src = r(fileName);
+    const alt = fileName
+      .replace("./", "")
+      .replace(/\.[^/.]+$/, "")
+      .replace(/-/g, " ");
+    return { src, alt };
+  });
+}
+
 const App = () => {
-  const [MOBILE_NAV_OPEN, SET_MOBILE_NAV_OPEN] = useState(false);
-  const [SCROLLED, SET_SCROLLED] = useState(false);
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [currentView, setCurrentView] = useState("main");
 
   useEffect(() => {
-    const HANDLE_SCROLL = () => {
-      SET_SCROLLED(window.scrollY > 0);
-    };
-
-    window.addEventListener("scroll", HANDLE_SCROLL);
-    return () => window.removeEventListener("scroll", HANDLE_SCROLL);
+    function handleScroll() {
+      setScrolled(window.scrollY > 0);
+    }
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const TOGGLE_MOBILE_NAV = () => {
-    SET_MOBILE_NAV_OPEN((prev) => !prev);
-  };
-
-  const scrollToSection = (ID) => {
-    const TARGET = document.getElementById(ID);
-    if (TARGET) {
-      // Get the height of the header
-      const HEADER_HEIGHT = document.querySelector(".header").offsetHeight;
-      // Calculate the position of the target element
-      const TARGET_POSITION =
-        TARGET.getBoundingClientRect().top + window.scrollY - HEADER_HEIGHT;
+  // scroll to bottom when switching to gallery
+  useEffect(() => {
+    if (currentView === "gallery") {
       window.scrollTo({
-        top: TARGET_POSITION,
+        top: document.body.scrollHeight,
         behavior: "smooth",
       });
     }
-    // Close mobile nav if open
-    if (MOBILE_NAV_OPEN) {
-      SET_MOBILE_NAV_OPEN(false);
+  }, [currentView]);
+
+  function toggleMobileNav() {
+    setMobileNavOpen((prev) => !prev);
+  }
+
+  function showMainAndScroll(sectionId) {
+    if (currentView === "gallery") {
+      setCurrentView("main");
+      setTimeout(() => scrollToSection(sectionId), 0);
+    } else {
+      scrollToSection(sectionId);
     }
-  };
+    if (mobileNavOpen) setMobileNavOpen(false);
+  }
+
+  function scrollToSection(id) {
+    const target = document.getElementById(id);
+    if (!target) return;
+    const headerHeight = document.querySelector(".header").offsetHeight;
+    const y =
+      target.getBoundingClientRect().top + window.scrollY - headerHeight;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  }
 
   return (
     <div className="app-container">
-      <header className={`header ${SCROLLED ? "scrolled" : ""}`}>
+      <header className={`header ${scrolled ? "scrolled" : ""}`}>
         <div className="logo">Chantelle A' Court</div>
         <nav className="nav-container">
-          <div className={`nav-buttons ${MOBILE_NAV_OPEN ? "open" : ""}`}>
-            <button onClick={() => scrollToSection("hero")}>Home</button>
-            <button onClick={() => scrollToSection("about")}>About</button>
-            <button onClick={() => scrollToSection("new")}>New</button>
-            <button onClick={() => scrollToSection("coaching")}>
+          <div className={`nav-buttons ${mobileNavOpen ? "open" : ""}`}>
+            <button onClick={() => showMainAndScroll("hero")}>Home</button>
+            <button onClick={() => showMainAndScroll("about")}>About</button>
+            <button onClick={() => showMainAndScroll("new")}>New</button>
+            <button onClick={() => showMainAndScroll("coaching")}>
               Coaching
             </button>
-            <button onClick={() => scrollToSection("bookings")}>
+            <button onClick={() => showMainAndScroll("bookings")}>
               Bookings
             </button>
-            <button onClick={() => scrollToSection("gallery")}>Gallery</button>
+            <button
+              onClick={() => {
+                setCurrentView("gallery");
+                if (mobileNavOpen) setMobileNavOpen(false);
+              }}
+            >
+              Gallery
+            </button>
           </div>
-          <button className="burger-menu" onClick={TOGGLE_MOBILE_NAV}>
+          <button className="burger-menu" onClick={toggleMobileNav}>
             &#9776;
           </button>
         </nav>
       </header>
+
       <main className="main-content">
-        {/* Hero Section */}
+        {/* Always render hero */}
         <section id="hero" className="hero-section">
           <div className="hero-overlay">
             <h1>Inspire Your Journey</h1>
             <p>Unlock your potential</p>
-            <button onClick={() => scrollToSection("about")}>
+            <button
+              onClick={() =>
+                currentView === "gallery"
+                  ? setCurrentView("main")
+                  : showMainAndScroll("about")
+              }
+            >
               Learn ice skating
             </button>
           </div>
         </section>
 
         <Suspense fallback={<div className="lazy-loading">Loading...</div>}>
-          <LazyLoadSection id="about" className="section-container">
-            <About />
-          </LazyLoadSection>
+          {currentView === "main" ? (
+            <>
+              <LazyLoadSection id="about" className="section-container">
+                <About />
+              </LazyLoadSection>
 
-          <LazyLoadSection id="new" className="section-container">
-            <New />
-          </LazyLoadSection>
+              <LazyLoadSection id="new" className="section-container">
+                <New />
+              </LazyLoadSection>
 
-          <LazyLoadSection id="coaching" className="section-container">
-            <Coaching />
-          </LazyLoadSection>
+              <LazyLoadSection id="coaching" className="section-container">
+                <Coaching />
+              </LazyLoadSection>
 
-          <LazyLoadSection id="bookings" className="section-container">
-            <Bookings />
-          </LazyLoadSection>
-
-          <LazyLoadSection id="gallery" className="section-container">
-            <h1>Gallery</h1>
-            <Gallery Images={IMAGE_ARRAY} Interval={5000} />
-          </LazyLoadSection>
+              <LazyLoadSection id="bookings" className="section-container">
+                <Bookings />
+              </LazyLoadSection>
+            </>
+          ) : (
+            <div className="gallery-page">
+              <h1 className="gallery-title">Gallery</h1>
+              <Gallery Images={IMAGE_ARRAY} Interval={5000} />
+            </div>
+          )}
         </Suspense>
       </main>
     </div>
   );
 };
-
-// helper function to import all images from a folder
-function IMPORT_ALL_IMAGES(R) {
-  return R.keys().map((FILE_NAME) => {
-    const SRC = R(FILE_NAME);
-    // Generate alt text by removing the "./" and file extension, then replace hyphens with spaces
-    const ALT = FILE_NAME.replace("./", "")
-      .replace(/\.[^/.]+$/, "")
-      .replace(/-/g, " ");
-    return { src: SRC, alt: ALT };
-  });
-}
 
 export default App;
