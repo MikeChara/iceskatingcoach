@@ -66,7 +66,7 @@ const App = () => {
     const headerHeight = document.querySelector(".header").offsetHeight;
     const y =
       target.getBoundingClientRect().top + window.scrollY - headerHeight;
-    window.scrollTo({ top: y, behavior: "smooth" }, 500);
+    window.scrollTo({ top: y, behavior: "smooth" });
   }
 
   return (
