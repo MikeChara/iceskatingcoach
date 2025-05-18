@@ -81,7 +81,7 @@ const App = () => {
           name="keywords"
           content="ice-skating, iceskating, skating, slough ice arena, slough ice skating, coaching, lessons, ice lessons, slough, slough everyone active, slough ice rink, ice skating coach, ice skating lessons, ice skating competition, ISU, ice skating levels, slough and surrounding areas, west london ice skating, west london ice skating lessons, west london ice skating coach"
         />
-        <link rel="canonical" href="https://yourdomain.com" />
+        <link rel="canonical" href="https://coachchantelle.app" />
         <meta
           property="og:title"
           content="Skating Lessons in Slough & West London | Chantelle A' Court"
@@ -90,11 +90,11 @@ const App = () => {
           property="og:description"
           content="Book ice skating lessons in Slough and West London with Chantelle A' Court. Coaching for all levels at Slough Ice Arena and surrounding areas."
         />
-        <meta property="og:url" content="https://yourdomain.com" />
+        <meta property="og:url" content="https://coachchantelle.app" />
         <meta property="og:type" content="website" />
         <meta
           property="og:image"
-          content="https://yourdomain.com/path-to-featured-image.jpg"
+          content="https://coachchantelle.app/chantelle2.jpg"
         />
 
         <meta name="twitter:card" content="summary_large_image" />
@@ -108,7 +108,7 @@ const App = () => {
         />
         <meta
           name="twitter:image"
-          content="https://yourdomain.com/path-to-featured-image.jpg"
+          content="https://coachchantelle.app/chantelle2.jpg"
         />
         <script type="application/ld+json">
           {`{
@@ -126,7 +126,7 @@ const App = () => {
               "West London",
               "Surrounding Areas"
             ],
-            "url": "https://yourdomain.com"
+            "url": "https://coachchantelle.app"
           }`}
         </script>
       </Helmet>
