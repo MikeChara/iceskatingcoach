@@ -7,7 +7,8 @@ export default function Bookings() {
         <p>
           Send me over an email with your preferred day and time, your current
           skating level and goals, and any questions you might have for me. I'll
-          get back to you as soon as I can 🙂.{" "}
+          get back to you as soon as I can 🙂. Feel free to leave a contact
+          number if you'd rather a text or phone call too!{" "}
         </p>
         <p>chantelle@mikedoe.anonaddy.com</p>
       </p>
