@@ -84,7 +84,7 @@ const App = () => {
         <link rel="canonical" href="https://coachchantelle.app" />
         <meta
           property="og:title"
-          content="Skating Lessons in Slough & West London | Chantelle A' Court"
+          content="Skating Lessons in Slough, West London | Chantelle A' Court"
         />
         <meta
           property="og:description"
@@ -100,11 +100,11 @@ const App = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Skating Lessons in Slough & West London | Chantelle A' Court"
+          content="Skating Lessons in Slough, West London | Chantelle A' Court"
         />
         <meta
           name="twitter:description"
-          content="Book ice skating lessons in Slough and West London with Chantelle A' Court. Coaching for all levels at Slough Ice Arena and surrounding areas."
+          content="Book ice skating lessons in Slough, West London with Chantelle A' Court. Coaching for all levels at Slough Ice Arena and surrounding areas."
         />
         <meta
           name="twitter:image"
@@ -188,7 +188,7 @@ const App = () => {
             {CurrentView === "bookingsPage" && (
               <div className="section-container">
                 <h1 className="section-header">
-                  Slough Ice Arena Ice-Skating Lessons
+                  Slough Ice Arena Ice Skating Lessons
                 </h1>
                 <Bookings />
               </div>
