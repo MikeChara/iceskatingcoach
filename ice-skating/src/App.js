@@ -119,9 +119,10 @@ const App = () => {
                 <New />
               </LazyLoadSection>
 
-              <LazyLoadSection id="coaching" className="section-container">
-                <Coaching />
-              </LazyLoadSection>
+              <LazyLoadSection
+                id="coaching"
+                className="section-container"
+              ></LazyLoadSection>
             </>
           )}
 

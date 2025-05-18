@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Coaching() {
+export default function Coaching({ OnNavigate }) {
   return (
     <div>
       <div className="section-header">
@@ -16,6 +16,12 @@ export default function Coaching() {
       <p>
         We focus on your preferences, at your own pace, with one-to-one lessons.
       </p>
+      <button
+        onClick={() => OnNavigate("bookingsPage")}
+        className="link-button"
+      >
+        How do I book a lesson?
+      </button>
     </div>
   );
 }
