@@ -72,18 +72,44 @@ const App = () => {
   return (
     <>
       <Helmet>
-        <title>
-          Skating Lessons in Slough & West London | Chantelle A' Court
-        </title>
+        <title>Ice Skating Lessons in Slough | Chantelle A' Court</title>
         <meta
           name="description"
-          content="Book ice skating lessons in Slough and West London with Chantelle A' Court. Coaching for all levels at Slough Ice Arena and surrounding areas."
+          content="Private ice skating lessons in Slough. Join Chantelle A' Court for expert coaching at Slough Ice Arena. Beginners & advanced welcome!"
         />
         <meta
           name="keywords"
           content="ice-skating, iceskating, skating, slough ice arena, slough ice skating, coaching, lessons, ice lessons, slough, slough everyone active, slough ice rink, ice skating coach, ice skating lessons, ice skating competition, ISU, ice skating levels, slough and surrounding areas, west london ice skating, west london ice skating lessons, west london ice skating coach"
         />
         <link rel="canonical" href="https://yourdomain.com" />
+        <meta
+          property="og:title"
+          content="Skating Lessons in Slough & West London | Chantelle A' Court"
+        />
+        <meta
+          property="og:description"
+          content="Book ice skating lessons in Slough and West London with Chantelle A' Court. Coaching for all levels at Slough Ice Arena and surrounding areas."
+        />
+        <meta property="og:url" content="https://yourdomain.com" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:image"
+          content="https://yourdomain.com/path-to-featured-image.jpg"
+        />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Skating Lessons in Slough & West London | Chantelle A' Court"
+        />
+        <meta
+          name="twitter:description"
+          content="Book ice skating lessons in Slough and West London with Chantelle A' Court. Coaching for all levels at Slough Ice Arena and surrounding areas."
+        />
+        <meta
+          name="twitter:image"
+          content="https://yourdomain.com/path-to-featured-image.jpg"
+        />
         <script type="application/ld+json">
           {`{
             "@context": "https://schema.org",
