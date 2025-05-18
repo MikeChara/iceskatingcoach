@@ -40,10 +40,7 @@ const App = () => {
   // scroll to bottom when switching to gallery
   useEffect(() => {
     if (currentView === "gallery") {
-      window.scrollTo({
-        top: document.body.scrollHeight,
-        behavior: "smooth",
-      });
+      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
     }
   }, [currentView]);
 
@@ -52,7 +49,7 @@ const App = () => {
   }
 
   function showMainAndScroll(sectionId) {
-    if (currentView === "gallery") {
+    if (currentView !== "main") {
       setCurrentView("main");
       setTimeout(() => scrollToSection(sectionId), 0);
     } else {
@@ -82,17 +79,10 @@ const App = () => {
             <button onClick={() => showMainAndScroll("coaching")}>
               Coaching
             </button>
-            <button onClick={() => showMainAndScroll("bookings")}>
+            <button onClick={() => setCurrentView("bookingsPage")}>
               Bookings
             </button>
-            <button
-              onClick={() => {
-                setCurrentView("gallery");
-                if (mobileNavOpen) setMobileNavOpen(false);
-              }}
-            >
-              Gallery
-            </button>
+            <button onClick={() => setCurrentView("gallery")}>Gallery</button>
           </div>
           <button className="burger-menu" onClick={toggleMobileNav}>
             &#9776;
@@ -119,7 +109,7 @@ const App = () => {
         </section>
 
         <Suspense fallback={<div className="lazy-loading">Loading...</div>}>
-          {currentView === "main" ? (
+          {currentView === "main" && (
             <>
               <LazyLoadSection id="about" className="section-container">
                 <About />
@@ -132,15 +122,20 @@ const App = () => {
               <LazyLoadSection id="coaching" className="section-container">
                 <Coaching />
               </LazyLoadSection>
-
-              <LazyLoadSection id="bookings" className="section-container">
-                <Bookings />
-              </LazyLoadSection>
             </>
-          ) : (
+          )}
+
+          {currentView === "gallery" && (
             <div className="gallery-page">
               <h1 className="gallery-title">Gallery</h1>
               <Gallery Images={IMAGE_ARRAY} Interval={5000} />
+            </div>
+          )}
+
+          {currentView === "bookingsPage" && (
+            <div className="bookings-page">
+              <h1 className="page-title">Bookings</h1>
+              <Bookings />
             </div>
           )}
         </Suspense>
