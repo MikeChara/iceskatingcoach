@@ -3,6 +3,16 @@
   "name": "Chantelle A' Court ice skating",
   "icons": [
     {
+      "src": "skate-fav-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "skate-fav-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
       "src": "skate-fav.ico",
       "sizes": "512x512",
       "type": "image/x-icon"
