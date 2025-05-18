@@ -1,4 +1,5 @@
 import React, { useState, lazy, Suspense, useEffect } from "react";
+import { Helmet } from "react-helmet";
 import "./App.css";
 import LazyLoadSection from "./Components/LazyLoadSection";
 import Gallery from "./PageComponents/Gallery";
@@ -43,7 +44,6 @@ const App = () => {
     if (MobileNavOpen) {
       SetMobileNavOpen(false);
     }
-    // If a sectionId is provided, scroll there after view update
     if (SectionId) {
       setTimeout(() => scrollToSection(SectionId), 0);
     }
@@ -51,7 +51,7 @@ const App = () => {
 
   // scroll to bottom when switching to gallery
   useEffect(() => {
-    if (CurrentView === "gallery") {
+    if (CurrentView === "gallery" || CurrentView === "bookingsPage") {
       window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
     }
   }, [CurrentView]);
@@ -66,82 +66,111 @@ const App = () => {
     const headerHeight = document.querySelector(".header").offsetHeight;
     const y =
       target.getBoundingClientRect().top + window.scrollY - headerHeight;
-    window.scrollTo({ top: y, behavior: "smooth" });
+    window.scrollTo({ top: y, behavior: "smooth" }, 500);
   }
 
   return (
-    <div className="app-container">
-      {/* Nav Menu */}
-      <header className={`header ${Scrolled ? "scrolled" : ""}`}>
-        <div className="logo">Chantelle A' Court</div>
-        <nav className="nav-container">
-          <div className={`nav-buttons ${MobileNavOpen ? "open" : ""}`}>
-            <button onClick={() => navigateTo("main", "hero")}>Home</button>
-            <button onClick={() => navigateTo("main", "about")}>About</button>
-            <button onClick={() => navigateTo("main", "new")}>New</button>
-            <button onClick={() => navigateTo("main", "coaching")}>
-              Coaching
-            </button>
-            <button onClick={() => navigateTo("bookingsPage")}>Bookings</button>
-            <button onClick={() => navigateTo("gallery")}>Gallery</button>
-          </div>
-          <button className="burger-menu" onClick={toggleMobileNav}>
-            &#9776;
-          </button>
-        </nav>
-      </header>
-
-      <main className="main-content">
-        {/* Always render hero */}
-        <section id="hero" className="hero-section">
-          <div className="hero-overlay">
-            <h1>Inspire Your Journey</h1>
-            <p>Unlock your potential</p>
-            <button
-              onClick={() =>
-                CurrentView === "gallery"
-                  ? navigateTo("main", "about")
-                  : navigateTo("main", "about")
-              }
-            >
-              Learn ice skating
-            </button>
-          </div>
-        </section>
-
-        <Suspense fallback={<div className="lazy-loading">Loading...</div>}>
-          {CurrentView === "main" && (
-            <>
-              <LazyLoadSection id="about" className="section-container">
-                <About />
-              </LazyLoadSection>
-
-              <LazyLoadSection id="new" className="section-container">
-                <New />
-              </LazyLoadSection>
-
-              <LazyLoadSection id="coaching" className="section-container">
-                <Coaching OnNavigate={SetCurrentView} />
-              </LazyLoadSection>
-            </>
-          )}
-
-          {CurrentView === "gallery" && (
-            <div className="gallery-page">
-              <h1 className="gallery-title">Gallery</h1>
-              <Gallery Images={IMAGE_ARRAY} Interval={5000} />
+    <>
+      <Helmet>
+        <title>
+          Skating Lessons in Slough & West London | Chantelle A' Court
+        </title>
+        <meta
+          name="description"
+          content="Book ice skating lessons in Slough and West London with Chantelle A' Court. Coaching for all levels at Slough Ice Arena and surrounding areas."
+        />
+        <meta
+          name="keywords"
+          content="ice-skating, iceskating, skating, slough ice arena, slough ice skating, coaching, lessons, ice lessons, slough, slough everyone active, slough ice rink, ice skating coach, ice skating lessons, ice skating competition, ISU, ice skating levels, slough and surrounding areas, west london ice skating, west london ice skating lessons, west london ice skating coach"
+        />
+        <link rel="canonical" href="https://yourdomain.com" />
+        <script type="application/ld+json">
+          {`{
+            "@context": "https://schema.org",
+            "@type": "SportsActivityLocation",
+            "name": "Chantelle A' Court Ice Skating Lessons",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Slough",
+              "addressRegion": "West London",
+              "addressCountry": "UK"
+            },
+            "areaServed": [
+              "Slough",
+              "West London",
+              "Surrounding Areas"
+            ],
+            "url": "https://yourdomain.com"
+          }`}
+        </script>
+      </Helmet>
+      <div className="app-container">
+        <header className={`header ${Scrolled ? "scrolled" : ""}`}>
+          <div className="logo">Chantelle A' Court</div>
+          <nav className="nav-container">
+            <div className={`nav-buttons ${MobileNavOpen ? "open" : ""}`}>
+              <button onClick={() => navigateTo("main", "hero")}>Home</button>
+              <button onClick={() => navigateTo("main", "about")}>About</button>
+              <button onClick={() => navigateTo("main", "new")}>New</button>
+              <button onClick={() => navigateTo("main", "coaching")}>
+                Coaching
+              </button>
+              <button onClick={() => navigateTo("bookingsPage")}>
+                Bookings
+              </button>
+              <button onClick={() => navigateTo("gallery")}>Gallery</button>
             </div>
-          )}
+            <button className="burger-menu" onClick={toggleMobileNav}>
+              &#9776;
+            </button>
+          </nav>
+        </header>
 
-          {CurrentView === "bookingsPage" && (
-            <div className="section-container">
-              <h1 className="section-header">Bookings</h1>
-              <Bookings />
+        <main className="main-content">
+          <section id="hero" className="hero-section">
+            <div className="hero-overlay">
+              <h1>Inspire Your Journey</h1>
+              <p>Unlock your potential</p>
+              <button onClick={() => navigateTo("main", "about")}>
+                Learn ice skating
+              </button>
             </div>
-          )}
-        </Suspense>
-      </main>
-    </div>
+          </section>
+
+          <Suspense fallback={<div className="lazy-loading">Loading...</div>}>
+            {CurrentView === "main" && (
+              <>
+                <LazyLoadSection id="about" className="section-container">
+                  <About />
+                </LazyLoadSection>
+                <LazyLoadSection id="new" className="section-container">
+                  <New />
+                </LazyLoadSection>
+                <LazyLoadSection id="coaching" className="section-container">
+                  <Coaching OnNavigate={SetCurrentView} />
+                </LazyLoadSection>
+              </>
+            )}
+
+            {CurrentView === "gallery" && (
+              <div className="gallery-page">
+                <h1 className="gallery-title">Gallery</h1>
+                <Gallery Images={IMAGE_ARRAY} Interval={5000} />
+              </div>
+            )}
+
+            {CurrentView === "bookingsPage" && (
+              <div className="section-container">
+                <h1 className="section-header">
+                  Slough Ice Arena Ice-Skating Lessons
+                </h1>
+                <Bookings />
+              </div>
+            )}
+          </Suspense>
+        </main>
+      </div>
+    </>
   );
 };
 

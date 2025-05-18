@@ -1,7 +1,6 @@
 export default function Bookings() {
   return (
     <div>
-      <h1>Slough Ice Arena Ice-Skating Lessons</h1>
       <p>
         <p>Currently my only available timeslots are Friday and Sunday.</p>
         <p>Pricing: £30 for 30 minutes, discounted to £50 for a full hour.</p>
