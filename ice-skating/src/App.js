@@ -3,10 +3,10 @@ import { Helmet } from "react-helmet";
 import "./App.css";
 import LazyLoadSection from "./Components/LazyLoadSection";
 import Gallery from "./PageComponents/Gallery";
+import Bookings from "./PageComponents/Bookings";
 
 // lazy-loaded page bits
 const Coaching = lazy(() => import("./PageComponents/Coaching"));
-const Bookings = lazy(() => import("./PageComponents/Bookings"));
 const New = lazy(() => import("./PageComponents/New"));
 const About = lazy(() => import("./PageComponents/About"));
 
