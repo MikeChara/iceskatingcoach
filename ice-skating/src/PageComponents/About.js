@@ -8,7 +8,7 @@ export default function About() {
       </div>
       <p>
         Hello, I’m Chantelle — a seasoned performer and passionate ice skating
-        coach.
+        coach based out of Slough Ice Arena.
       </p>
       <p>
         I've been on the ice for most of my life, many of them at professional

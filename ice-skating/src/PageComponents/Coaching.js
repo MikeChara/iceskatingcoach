@@ -4,7 +4,7 @@ export default function Coaching({ OnNavigate }) {
   return (
     <div>
       <div className="section-header">
-        <h1>Coaching Services</h1>
+        <h1>Ice Skating Coaching Services at Sloough Ice Arena</h1>
       </div>
       <p>
         Age is not a factor; I teach pupils of all ages. All that matters is a
