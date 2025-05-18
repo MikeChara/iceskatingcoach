@@ -69,6 +69,7 @@ const App = () => {
 
   return (
     <div className="app-container">
+      {/* Nav Menu */}
       <header className={`header ${scrolled ? "scrolled" : ""}`}>
         <div className="logo">Chantelle A' Court</div>
         <nav className="nav-container">
@@ -133,8 +134,8 @@ const App = () => {
           )}
 
           {currentView === "bookingsPage" && (
-            <div className="bookings-page">
-              <h1 className="page-title">Bookings</h1>
+            <div className="section-container">
+              <h1 className="section-header">Bookings</h1>
               <Bookings />
             </div>
           )}
