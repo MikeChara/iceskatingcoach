@@ -25,41 +25,43 @@ function importAllImages(r) {
 }
 
 const App = () => {
-  const [mobileNavOpen, setMobileNavOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const [currentView, setCurrentView] = useState("main");
+  const [MobileNavOpen, SetMobileNavOpen] = useState(false);
+  const [Scrolled, SetScrolled] = useState(false);
+  const [CurrentView, SetCurrentView] = useState("main");
 
   useEffect(() => {
     function handleScroll() {
-      setScrolled(window.scrollY > 0);
+      SetScrolled(window.scrollY > 0);
     }
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close mobile nav whenever navigation occurs
+  function navigateTo(View, SectionId = null) {
+    SetCurrentView(View);
+    if (MobileNavOpen) {
+      SetMobileNavOpen(false);
+    }
+    // If a sectionId is provided, scroll there after view update
+    if (SectionId) {
+      setTimeout(() => scrollToSection(SectionId), 0);
+    }
+  }
+
   // scroll to bottom when switching to gallery
   useEffect(() => {
-    if (currentView === "gallery") {
+    if (CurrentView === "gallery") {
       window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
     }
-  }, [currentView]);
+  }, [CurrentView]);
 
   function toggleMobileNav() {
-    setMobileNavOpen((prev) => !prev);
+    SetMobileNavOpen((prev) => !prev);
   }
 
-  function showMainAndScroll(sectionId) {
-    if (currentView !== "main") {
-      setCurrentView("main");
-      setTimeout(() => scrollToSection(sectionId), 0);
-    } else {
-      scrollToSection(sectionId);
-    }
-    if (mobileNavOpen) setMobileNavOpen(false);
-  }
-
-  function scrollToSection(id) {
-    const target = document.getElementById(id);
+  function scrollToSection(Id) {
+    const target = document.getElementById(Id);
     if (!target) return;
     const headerHeight = document.querySelector(".header").offsetHeight;
     const y =
@@ -70,20 +72,18 @@ const App = () => {
   return (
     <div className="app-container">
       {/* Nav Menu */}
-      <header className={`header ${scrolled ? "scrolled" : ""}`}>
+      <header className={`header ${Scrolled ? "scrolled" : ""}`}>
         <div className="logo">Chantelle A' Court</div>
         <nav className="nav-container">
-          <div className={`nav-buttons ${mobileNavOpen ? "open" : ""}`}>
-            <button onClick={() => showMainAndScroll("hero")}>Home</button>
-            <button onClick={() => showMainAndScroll("about")}>About</button>
-            <button onClick={() => showMainAndScroll("new")}>New</button>
-            <button onClick={() => showMainAndScroll("coaching")}>
+          <div className={`nav-buttons ${MobileNavOpen ? "open" : ""}`}>
+            <button onClick={() => navigateTo("main", "hero")}>Home</button>
+            <button onClick={() => navigateTo("main", "about")}>About</button>
+            <button onClick={() => navigateTo("main", "new")}>New</button>
+            <button onClick={() => navigateTo("main", "coaching")}>
               Coaching
             </button>
-            <button onClick={() => setCurrentView("bookingsPage")}>
-              Bookings
-            </button>
-            <button onClick={() => setCurrentView("gallery")}>Gallery</button>
+            <button onClick={() => navigateTo("bookingsPage")}>Bookings</button>
+            <button onClick={() => navigateTo("gallery")}>Gallery</button>
           </div>
           <button className="burger-menu" onClick={toggleMobileNav}>
             &#9776;
@@ -99,9 +99,9 @@ const App = () => {
             <p>Unlock your potential</p>
             <button
               onClick={() =>
-                currentView === "gallery"
-                  ? setCurrentView("main")
-                  : showMainAndScroll("about")
+                CurrentView === "gallery"
+                  ? navigateTo("main", "about")
+                  : navigateTo("main", "about")
               }
             >
               Learn ice skating
@@ -110,7 +110,7 @@ const App = () => {
         </section>
 
         <Suspense fallback={<div className="lazy-loading">Loading...</div>}>
-          {currentView === "main" && (
+          {CurrentView === "main" && (
             <>
               <LazyLoadSection id="about" className="section-container">
                 <About />
@@ -121,19 +121,19 @@ const App = () => {
               </LazyLoadSection>
 
               <LazyLoadSection id="coaching" className="section-container">
-                <Coaching OnNavigate={setCurrentView} />
+                <Coaching OnNavigate={SetCurrentView} />
               </LazyLoadSection>
             </>
           )}
 
-          {currentView === "gallery" && (
+          {CurrentView === "gallery" && (
             <div className="gallery-page">
               <h1 className="gallery-title">Gallery</h1>
               <Gallery Images={IMAGE_ARRAY} Interval={5000} />
             </div>
           )}
 
-          {currentView === "bookingsPage" && (
+          {CurrentView === "bookingsPage" && (
             <div className="section-container">
               <h1 className="section-header">Bookings</h1>
               <Bookings />
