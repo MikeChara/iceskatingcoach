@@ -114,7 +114,7 @@ const App = () => {
           {`{
             "@context": "https://schema.org",
             "@type": "SportsActivityLocation",
-            "name": "Chantelle A' Court Ice Skating Lessons",
+            "name": "Ice Skating Lessons",
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "Slough",
