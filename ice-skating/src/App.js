@@ -132,7 +132,9 @@ const App = () => {
       </Helmet>
       <div className="app-container">
         <header className={`header ${Scrolled ? "scrolled" : ""}`}>
-          <div className="logo">Chantelle A' Court</div>
+          <div className="logo">
+            Ice Skating Lessons with Chantelle A' Court
+          </div>
           <nav className="nav-container">
             <div className={`nav-buttons ${MobileNavOpen ? "open" : ""}`}>
               <button onClick={() => navigateTo("main", "hero")}>Home</button>
