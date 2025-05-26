@@ -72,14 +72,14 @@ const App = () => {
   return (
     <>
       <Helmet>
-        <title>Ice Skating Lessons in Slough | Chantelle A' Court</title>
+        <title>Ice Skating Lessons Slough</title>
         <meta
           name="description"
-          content="Private ice skating lessons in Slough. Join Chantelle A' Court for expert coaching at Slough Ice Arena. Beginners & advanced welcome!"
+          content="Private ice skating lessons in Slough. Join Chantelle A' Court for expert coaching at Slough Ice Arena. Beginners & advanced skaters welcome!"
         />
         <meta
           name="keywords"
-          content="ice-skating, iceskating, skating, slough ice arena, slough ice skating, coaching, lessons, ice lessons, slough, slough everyone active, slough ice rink, ice skating coach, ice skating lessons, ice skating competition, ISU, ice skating levels, slough and surrounding areas, west london ice skating, west london ice skating lessons, west london ice skating coach"
+          content="ice-skating, iceskating, skating, slough ice arena, slough ice skating, coaching, slough, slough everyone active, slough ice rink, ice skating coach, ice skating lessons, ISU certification, west london ice skating, west london ice skating lessons"
         />
         <link rel="canonical" href="https://coachchantelle.app" />
         <meta
@@ -132,9 +132,7 @@ const App = () => {
       </Helmet>
       <div className="app-container">
         <header className={`header ${Scrolled ? "scrolled" : ""}`}>
-          <div className="logo">
-            Ice Skating Lessons with Chantelle A' Court
-          </div>
+          <div className="logo">Chantelle A' Court</div>
           <nav className="nav-container">
             <div className={`nav-buttons ${MobileNavOpen ? "open" : ""}`}>
               <button onClick={() => navigateTo("main", "hero")}>Home</button>
