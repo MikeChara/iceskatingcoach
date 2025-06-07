@@ -1,4 +1,3 @@
-import React from "react";
 import SEO from "../Components/SEO";
 
 export default function About() {
@@ -6,7 +5,7 @@ export default function About() {
     <>
       <SEO />
       <div className="section-header">
-        <h1>Ice Skating Lessons in Slough</h1>
+        <h1>Ice skating lessons in Slough</h1>
       </div>
       <p>
         Hello, I’m Chantelle — a seasoned performer and passionate ice skating

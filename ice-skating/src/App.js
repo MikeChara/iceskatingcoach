@@ -1,5 +1,4 @@
 import React, { useState, lazy, Suspense, useEffect } from "react";
-import { Helmet } from "react-helmet";
 import "./App.css";
 import LazyLoadSection from "./Components/LazyLoadSection";
 import Gallery from "./PageComponents/Gallery";
