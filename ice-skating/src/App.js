@@ -87,9 +87,7 @@ const App = () => {
               </button>
               <button onClick={() => navigateTo("gallery")}>Gallery</button>
             </div>
-            <button className="burger-menu" onClick={toggleMobileNav}>
-              &#9776;
-            </button>
+            <button className="burger-menu" onClick={toggleMobileNav}></button>
           </nav>
         </header>
 
