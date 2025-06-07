@@ -71,65 +71,6 @@ const App = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Ice Skating Lessons Slough</title>
-        <meta
-          name="description"
-          content="Private ice skating lessons in Slough. Join Chantelle A' Court for expert coaching at Slough Ice Arena. Beginners & advanced skaters welcome!"
-        />
-        <meta
-          name="keywords"
-          content="ice-skating, iceskating, skating, slough ice arena, slough ice skating, coaching, slough, slough everyone active, slough ice rink, ice skating coach, ice skating lessons, ISU certification, west london ice skating, west london ice skating lessons"
-        />
-        <link rel="canonical" href="https://coachchantelle.app" />
-        <meta
-          property="og:title"
-          content="Skating Lessons in Slough, West London | Chantelle A' Court"
-        />
-        <meta
-          property="og:description"
-          content="Book ice skating lessons in Slough and West London with Chantelle A' Court. Coaching for all levels at Slough Ice Arena and surrounding areas."
-        />
-        <meta property="og:url" content="https://coachchantelle.app" />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:image"
-          content="https://coachchantelle.app/chantelle2.jpg"
-        />
-
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Skating Lessons in Slough, West London | Chantelle A' Court"
-        />
-        <meta
-          name="twitter:description"
-          content="Book ice skating lessons in Slough, West London with Chantelle A' Court. Coaching for all levels at Slough Ice Arena and surrounding areas."
-        />
-        <meta
-          name="twitter:image"
-          content="https://coachchantelle.app/chantelle2.jpg"
-        />
-        <script type="application/ld+json">
-          {`{
-            "@context": "https://schema.org",
-            "@type": "SportsActivityLocation",
-            "name": "Ice Skating Lessons",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Slough",
-              "addressRegion": "West London",
-              "addressCountry": "UK"
-            },
-            "areaServed": [
-              "Slough",
-              "West London",
-              "Surrounding Areas"
-            ],
-            "url": "https://coachchantelle.app"
-          }`}
-        </script>
-      </Helmet>
       <div className="app-container">
         <header className={`header ${Scrolled ? "scrolled" : ""}`}>
           <div className="logo">Chantelle A' Court</div>
