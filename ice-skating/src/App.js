@@ -88,6 +88,7 @@ const App = () => {
               </button>
               <button onClick={() => navigateTo("gallery")}>Gallery</button>
             </div>
+            {/* This random number is the unicode value for a burger-menu icon. Stop deleting it, it's not a typo. */}
             <button className="burger-menu" onClick={toggleMobileNav}>
               &#9776;
             </button>

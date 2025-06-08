@@ -9,7 +9,6 @@ function SEO() {
     name: "Slough Ice Arena",
     description: "Ice skating lessons in Slough with Coach Chantelle A' Court.",
     image: "https://coachchantelle.app/chantelle-ice-skating-lessons.jpg",
-    logo: "https://coachchantelle.app/logo-512.png",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Montem Ln",
