@@ -1,12 +1,15 @@
+// src/Components/SEO.jsx
+import React from "react";
 import { Helmet } from "react-helmet";
 
 function SEO() {
-  const jsonLd = {
+  const jsonLdBusiness = {
     "@context": "https://schema.org",
     "@type": "SportsActivityLocation",
     name: "Slough Ice Arena",
     description: "Ice skating lessons in Slough with Coach Chantelle A' Court.",
     image: "https://coachchantelle.app/chantelle-ice-skating-lessons.jpg",
+    logo: "https://coachchantelle.app/logo-512.png",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Montem Ln",
@@ -21,14 +24,15 @@ function SEO() {
       latitude: 51.51069093183828,
       longitude: -0.6091409746804808,
     },
-    telephone: "+44",
     url: "https://coachchantelle.app",
   };
 
   return (
     <Helmet>
-      {/* SEO */}
-      <title>Ice Skating Lessons in Slough | Chantelle A' Court</title>
+      {/* Primary SEO */}
+      <title>
+        Ice Skating Lessons in Slough | Coach Chantelle A&#39; Court
+      </title>
       <meta
         name="description"
         content="Private ice skating lessons in Slough. Join Chantelle A' Court at Slough Ice Arena—beginner to advanced!"
@@ -48,6 +52,8 @@ function SEO() {
         property="og:image"
         content="https://coachchantelle.app/chantelle-ice-skating-lessons.jpg"
       />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
       <meta property="og:url" content="https://coachchantelle.app" />
       <meta property="og:type" content="website" />
 
@@ -67,7 +73,9 @@ function SEO() {
       />
 
       {/* JSON-LD */}
-      <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+      <script type="application/ld+json">
+        {JSON.stringify(jsonLdBusiness)}
+      </script>
     </Helmet>
   );
 }

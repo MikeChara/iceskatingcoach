@@ -3,6 +3,7 @@ import "./App.css";
 import LazyLoadSection from "./Components/LazyLoadSection";
 import Gallery from "./PageComponents/Gallery";
 import Bookings from "./PageComponents/Bookings";
+import SEO from "./Components/SEO";
 
 // lazy-loaded page bits
 const Coaching = lazy(() => import("./PageComponents/Coaching"));
@@ -70,6 +71,7 @@ const App = () => {
 
   return (
     <>
+      <SEO />
       <div className="app-container">
         <header className={`header ${Scrolled ? "scrolled" : ""}`}>
           <div className="logo">Chantelle A' Court</div>

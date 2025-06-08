@@ -1,9 +1,6 @@
-import SEO from "../Components/SEO";
-
 export default function About() {
   return (
     <>
-      <SEO />
       <div className="section-header">
         <h1>Ice skating lessons in Slough</h1>
       </div>
