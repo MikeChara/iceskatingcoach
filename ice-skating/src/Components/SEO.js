@@ -7,7 +7,7 @@ function SEO() {
     "@context": "https://schema.org",
     "@type": "SportsActivityLocation",
     name: "Slough Ice Arena",
-    description: "Ice skating lessons in Slough with Coach Chantelle A' Court.",
+    description: "Ice skating lessons at Slough Ice Rink.",
     image: "https://coachchantelle.app/chantelle-ice-skating-lessons.jpg",
     address: {
       "@type": "PostalAddress",
