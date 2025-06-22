@@ -2,7 +2,7 @@ export default function About() {
   return (
     <>
       <div className="section-header">
-        <h1>Ice skating lessons in Slough</h1>
+        <title>Ice skating lessons in Slough</title>
       </div>
       <p>
         Hello, I’m Chantelle — a seasoned performer and passionate ice skating

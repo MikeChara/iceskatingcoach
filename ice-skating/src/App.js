@@ -109,10 +109,18 @@ const App = () => {
           <Suspense fallback={<div className="lazy-loading">Loading...</div>}>
             {CurrentView === "main" && (
               <>
-                <LazyLoadSection id="about" className="section-container">
+                <LazyLoadSection
+                  id="about"
+                  className="section-container"
+                  title="Ice skating lessons in Slough"
+                >
                   <About />
                 </LazyLoadSection>
-                <LazyLoadSection id="new" className="section-container">
+                <LazyLoadSection
+                  id="new"
+                  className="section-container"
+                  title="New to the ice rink? No problem"
+                >
                   <New />
                 </LazyLoadSection>
                 <LazyLoadSection id="coaching" className="section-container">
@@ -130,9 +138,9 @@ const App = () => {
 
             {CurrentView === "bookingsPage" && (
               <div className="section-container">
-                <h1 className="section-header">
-                  Slough Ice Arena Ice Skating Lessons
-                </h1>
+                <title className="section-header">
+                  Slough Ice Rink Ice Skating Lessons
+                </title>
                 <Bookings />
               </div>
             )}
