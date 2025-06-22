@@ -4,6 +4,7 @@ import LazyLoadSection from "./Components/LazyLoadSection";
 import Gallery from "./PageComponents/Gallery";
 import Bookings from "./PageComponents/Bookings";
 import SEO from "./Components/SEO";
+import Chantelle from "./Media/chantelle-ice-skating-lessons.jpg";
 
 // lazy-loaded page bits
 const Coaching = lazy(() => import("./PageComponents/Coaching"));
@@ -98,7 +99,7 @@ const App = () => {
         <main className="main-content">
           <section id="hero" className="hero-section">
             <img
-              src="/chantelle-ice-skating-lessons.jpg"
+              src={Chantelle}
               alt="Chantelle teaching ice skating lessons on the ice"
               className="visually-hidden"
               aria-hidden="false"
