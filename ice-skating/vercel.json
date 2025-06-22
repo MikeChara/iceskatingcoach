@@ -1,4 +1,14 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "images": {
+    "sizes": [640, 1080],
+    "localPatterns": [
+      {
+        "pathname": "^/Media/.*$"
+      }
+    ],
+    "formats": ["image/webp", "image/jpeg"]
+  },
   "version": 2,
   "builds": [
     {
@@ -10,15 +20,6 @@
   "headers": [
     {
       "source": "/(.*)\\.(jpg|jpeg|png|gif|svg|webp)$",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/(.*)\\.(js|css)$",
       "headers": [
         {
           "key": "Cache-Control",
