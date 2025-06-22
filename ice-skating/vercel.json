@@ -7,10 +7,6 @@
       "config": { "distDir": "build" }
     }
   ],
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "/.*", "dest": "/index.html" }
-  ],
   "headers": [
     {
       "source": "/(.*)\\.(jpg|jpeg|png|gif|svg|webp)$",
