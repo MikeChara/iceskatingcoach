@@ -97,6 +97,12 @@ const App = () => {
 
         <main className="main-content">
           <section id="hero" className="hero-section">
+            <img
+              src="../public/chantelle-ice-skating-lessons.jpg"
+              alt="Chantelle teaching ice skating lessons on the ice"
+              className="visually-hidden"
+              aria-hidden="false"
+            />
             <div className="hero-overlay">
               <h1>Inspire Your Journey</h1>
               <p>Unlock your potential</p>

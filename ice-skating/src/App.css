@@ -106,7 +106,7 @@ body {
 .hero-section {
   position: relative;
   height: 100vh;
-  background: url("../public/Chantelle-ice-skating-lessons.jpg") no-repeat
+  background: url("../public/chantelle-ice-skating-lessons.jpg") no-repeat
     center center/cover;
   background-attachment: fixed;
   display: flex;
@@ -120,6 +120,18 @@ body {
       center center/cover;
     background-attachment: scroll; /* Disable parallax on mobile for performance */
   }
+}
+
+/* A hidden image for holding alt-name details for the main parallax background */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0;
 }
 
 .hero-overlay {
