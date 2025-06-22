@@ -7,7 +7,7 @@
         "pathname": "^/Media/.*$"
       }
     ],
-    "formats": ["image/jpeg"]
+    "formats": ["image/webp"]
   },
   "version": 2,
   "builds": [
