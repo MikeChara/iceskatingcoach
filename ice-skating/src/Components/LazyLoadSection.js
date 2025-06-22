@@ -5,6 +5,8 @@ const LazyLoadSection = ({ id, className, children }) => {
   const [IS_VISIBLE, SET_IS_VISIBLE] = useState(false);
 
   useEffect(() => {
+    const CURRENT = REF.current; // <-- Snapshot ref
+
     const OBSERVER = new IntersectionObserver(
       (ENTRIES, OBSERVER_INSTANCE) => {
         ENTRIES.forEach((ENTRY) => {
@@ -19,13 +21,13 @@ const LazyLoadSection = ({ id, className, children }) => {
       }
     );
 
-    if (REF.current) {
-      OBSERVER.observe(REF.current);
+    if (CURRENT) {
+      OBSERVER.observe(CURRENT);
     }
 
     return () => {
-      if (REF.current) {
-        OBSERVER.unobserve(REF.current);
+      if (CURRENT) {
+        OBSERVER.unobserve(CURRENT);
       }
     };
   }, []);
