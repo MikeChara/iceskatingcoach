@@ -49,7 +49,7 @@ function SEO() {
       />
       <meta
         property="og:image"
-        content="https://coachchantelle.app/chantelle-ice-skating-lessons.jpg"
+        content="https://coachchantelle.app/Chantelle-ice-skating-lessons.jpg"
       />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
@@ -68,7 +68,7 @@ function SEO() {
       />
       <meta
         name="twitter:image"
-        content="https://coachchantelle.app/chantelle-ice-skating-lessons.jpg"
+        content="https://coachchantelle.app/Chantelle-ice-skating-lessons.jpg"
       />
 
       {/* JSON-LD */}
