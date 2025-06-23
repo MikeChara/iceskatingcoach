@@ -106,7 +106,7 @@ body {
 .hero-section {
   position: relative;
   height: 100vh;
-  background: url("./Media/chantelle-ice-skating-lessons.jpg") no-repeat center
+  background: url("/public/Chantelle-ice-skating-lessons.jpg") no-repeat center
     center/cover;
   background-attachment: fixed;
   display: flex;
@@ -116,7 +116,7 @@ body {
 
 @media (max-width: 768px) {
   .hero-section {
-    background: url("./Media/chantelle-ice-skating-coach-hero.jpg") no-repeat
+    background: url("/public/chantelle-ice-skating-coach-hero.jpg") no-repeat
       center center/cover;
     background-attachment: scroll; /* Disable parallax on mobile for performance */
   }
