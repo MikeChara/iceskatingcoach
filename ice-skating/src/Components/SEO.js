@@ -1,4 +1,3 @@
-// src/Components/SEO.jsx
 import React from "react";
 import { Helmet } from "react-helmet";
 
@@ -8,7 +7,7 @@ function SEO() {
     "@type": "SportsActivityLocation",
     name: "Slough Ice Arena",
     description: "Ice skating lessons at Slough Ice Rink.",
-    image: "https://coachchantelle.app/chantelle-ice-skating-lessons.jpg",
+    image: "https://coachchantelle.app/Chantelle-ice-skating-lessons.jpg",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Montem Ln",
