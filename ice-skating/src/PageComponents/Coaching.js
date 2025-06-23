@@ -4,7 +4,7 @@ export default function Coaching({ OnNavigate }) {
   return (
     <div>
       <div className="section-header">
-        <title>Coaching for any age or level of experience</title>
+        <h1>Coaching for any age or level of experience</h1>
       </div>
       <p>
         Age is not a factor; I teach pupils of all ages. All that matters is a

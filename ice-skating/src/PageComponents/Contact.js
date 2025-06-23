@@ -4,7 +4,7 @@ export default function Contact() {
   return (
     <div>
       <div className="section-header">
-        <title>Contact Me</title>
+        <h1>Contact Me</h1>
       </div>
       <p>
         Email me at:{" "}

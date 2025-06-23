@@ -4,7 +4,7 @@ export default function New() {
   return (
     <div>
       <div className="section-header">
-        <title>New to the ice rink? No problem</title>
+        <h1>New to the ice rink? No problem</h1>
       </div>
       <p>
         If you're new to skating, I'd love to take you onto the ice for the
