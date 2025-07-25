@@ -6,10 +6,11 @@ import Bookings from "./PageComponents/Bookings";
 import SEO from "./Components/SEO";
 import Chantelle from "./Media/chantelle-ice-skating-lessons.jpg";
 
-// lazy-loaded page bits
-const Coaching = lazy(() => import("./PageComponents/Coaching"));
+// Eagerly-loaded About section for SEO
+import About from "./PageComponents/About";
+// other sections remain lazy-loaded
 const New = lazy(() => import("./PageComponents/New"));
-const About = lazy(() => import("./PageComponents/About"));
+const Coaching = lazy(() => import("./PageComponents/Coaching"));
 
 const IMAGE_ARRAY = importAllImages(
   require.context("./Media", false, /\.(png|jpe?g|svg)$/)
@@ -39,7 +40,6 @@ const App = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile nav whenever navigation occurs
   function navigateTo(View, SectionId = null) {
     SetCurrentView(View);
     if (MobileNavOpen) {
@@ -50,7 +50,6 @@ const App = () => {
     }
   }
 
-  // scroll to bottom when switching to gallery
   useEffect(() => {
     if (CurrentView === "gallery" || CurrentView === "bookingsPage") {
       window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
@@ -89,7 +88,6 @@ const App = () => {
               </button>
               <button onClick={() => navigateTo("gallery")}>Gallery</button>
             </div>
-            {/* This random number is the unicode value for a burger-menu icon. Stop deleting it, it's not a typo. */}
             <button className="burger-menu" onClick={toggleMobileNav}>
               &#9776;
             </button>
@@ -116,13 +114,12 @@ const App = () => {
           <Suspense fallback={<div className="lazy-loading">Loading...</div>}>
             {CurrentView === "main" && (
               <>
-                <LazyLoadSection
-                  id="about"
-                  className="section-container"
-                  title="Ice skating lessons in Slough"
-                >
+                {/* Eager-loaded About section for SEO */}
+                <section id="about" className="section-container">
                   <About />
-                </LazyLoadSection>
+                </section>
+
+                {/* Other sections remain lazy-loaded */}
                 <LazyLoadSection
                   id="new"
                   className="section-container"
@@ -130,6 +127,7 @@ const App = () => {
                 >
                   <New />
                 </LazyLoadSection>
+
                 <LazyLoadSection id="coaching" className="section-container">
                   <Coaching OnNavigate={SetCurrentView} />
                 </LazyLoadSection>
