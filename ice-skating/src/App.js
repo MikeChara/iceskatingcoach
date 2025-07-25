@@ -40,6 +40,7 @@ const App = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close mobile nav whenever navigation occurs
   function navigateTo(View, SectionId = null) {
     SetCurrentView(View);
     if (MobileNavOpen) {
@@ -50,6 +51,7 @@ const App = () => {
     }
   }
 
+  // scroll to bottom when switching to gallery
   useEffect(() => {
     if (CurrentView === "gallery" || CurrentView === "bookingsPage") {
       window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
@@ -88,6 +90,7 @@ const App = () => {
               </button>
               <button onClick={() => navigateTo("gallery")}>Gallery</button>
             </div>
+            {/* This random number is the unicode value for a burger-menu icon. Stop deleting it, it's not a typo. */}
             <button className="burger-menu" onClick={toggleMobileNav}>
               &#9776;
             </button>
