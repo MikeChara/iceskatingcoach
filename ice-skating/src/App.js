@@ -4,7 +4,7 @@ import LazyLoadSection from "./Components/LazyLoadSection";
 import Gallery from "./PageComponents/Gallery";
 import Bookings from "./PageComponents/Bookings";
 import SEO from "./Components/SEO";
-import Chantelle from "./Media/chantelle-ice-skating-lessons.jpg";
+import Chantelle from "./Media/Chantelle-ice-skating-lessons.jpg";
 
 // lazy-loaded page bits
 const Coaching = lazy(() => import("./PageComponents/Coaching"));
