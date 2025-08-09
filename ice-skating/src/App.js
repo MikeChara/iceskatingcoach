@@ -6,11 +6,10 @@ import Bookings from "./PageComponents/Bookings";
 import SEO from "./Components/SEO";
 import Chantelle from "./Media/chantelle-ice-skating-lessons.jpg";
 
-// Eagerly-loaded About section for SEO
-import About from "./PageComponents/About";
-// other sections remain lazy-loaded
-const New = lazy(() => import("./PageComponents/New"));
+// lazy-loaded page bits
 const Coaching = lazy(() => import("./PageComponents/Coaching"));
+const New = lazy(() => import("./PageComponents/New"));
+const About = lazy(() => import("./PageComponents/About"));
 
 const IMAGE_ARRAY = importAllImages(
   require.context("./Media", false, /\.(png|jpe?g|svg)$/)
@@ -117,12 +116,13 @@ const App = () => {
           <Suspense fallback={<div className="lazy-loading">Loading...</div>}>
             {CurrentView === "main" && (
               <>
-                {/* Eager-loaded About section for SEO */}
-                <section id="about" className="section-container">
+                <LazyLoadSection
+                  id="about"
+                  className="section-container"
+                  title="Ice skating lessons in Slough"
+                >
                   <About />
-                </section>
-
-                {/* Other sections remain lazy-loaded */}
+                </LazyLoadSection>
                 <LazyLoadSection
                   id="new"
                   className="section-container"
@@ -130,7 +130,6 @@ const App = () => {
                 >
                   <New />
                 </LazyLoadSection>
-
                 <LazyLoadSection id="coaching" className="section-container">
                   <Coaching OnNavigate={SetCurrentView} />
                 </LazyLoadSection>
