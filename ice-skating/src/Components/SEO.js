@@ -7,7 +7,7 @@ function SEO() {
     "@type": "SportsActivityLocation",
     name: "Slough Ice Arena",
     description: "Ice skating lessons at Slough Ice Rink.",
-    image: "https://coachchantelle.app/Chantelle-ice-skating-lessons.jpg",
+    image: "https://coachchantelle.app/chantelle-ice-skating-lessons.jpg",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Montem Ln",
@@ -48,7 +48,7 @@ function SEO() {
       />
       <meta
         property="og:image"
-        content="https://coachchantelle.app/Chantelle-ice-skating-lessons.jpg"
+        content="https://coachchantelle.app/chantelle-ice-skating-lessons.jpg"
       />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
@@ -67,7 +67,7 @@ function SEO() {
       />
       <meta
         name="twitter:image"
-        content="https://coachchantelle.app/Chantelle-ice-skating-lessons.jpg"
+        content="https://coachchantelle.app/chantelle-ice-skating-lessons.jpg"
       />
 
       {/* JSON-LD */}

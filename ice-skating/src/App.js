@@ -100,7 +100,7 @@ const App = () => {
           <section id="hero" className="hero-section">
             <img
               src={Chantelle}
-              alt="Chantelle teaching ice skating lessons on the ice"
+              alt="Chantelle Ice Skating Lessons"
               className="visually-hidden"
               aria-hidden="false"
             />

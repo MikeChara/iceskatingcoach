@@ -106,7 +106,7 @@ body {
 .hero-section {
   position: relative;
   height: 100vh;
-  background: url("/public/Chantelle-ice-skating-lessons.jpg") no-repeat center
+  background: url("/public/chantelle-ice-skating-lessons.jpg") no-repeat center
     center/cover;
   background-attachment: fixed;
   display: flex;
