@@ -8,7 +8,7 @@ export default function Contact() {
       </div>
       <p>
         Email me at:{" "}
-        <a href="mailto:chantelle@mikedoe.anonaddy.com">
+        <a href="mailto:chantelle@coachchantelle.app">
           chantelle@mikedoe.anonaddy.com
         </a>
       </p>
