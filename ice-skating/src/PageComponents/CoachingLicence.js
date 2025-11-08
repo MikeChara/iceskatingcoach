@@ -20,7 +20,7 @@ export default function CoachingLicence({ Licence }) {
         </a>
       </p>
       <p>
-        If you're interested, you can read more about the coaching licence
+        If you're interested, you can read more about the coaching licence{" "}
         <a
           href="https://www.iceskating.org.uk/coaches"
           target="_blank"
