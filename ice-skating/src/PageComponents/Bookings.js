@@ -10,7 +10,9 @@ export default function Bookings() {
           🙂. Feel free to leave a contact number if you'd rather a text or
           phone call too!{" "}
         </p>
-        <p>chantelle@coachchantelle.app</p>
+        <a href="mailto:chantelle@coachchantelle.app">
+          chantelle@coachchantelle.app
+        </a>
       </p>
     </div>
   );
