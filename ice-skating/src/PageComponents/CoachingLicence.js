@@ -28,6 +28,8 @@ export default function CoachingLicence({ Licence }) {
         >
           here.
         </a>
+        <p></p>
+        <p>And you can use the QR code below too, if you like.</p>
         <img
           className="licence"
           src={Licence}
