@@ -3,8 +3,10 @@ import "./App.css";
 import LazyLoadSection from "./Components/LazyLoadSection";
 import Gallery from "./PageComponents/Gallery";
 import Bookings from "./PageComponents/Bookings";
+import CoachingLicence from "./PageComponents/CoachingLicence";
 import SEO from "./Components/SEO";
 import Chantelle from "./Media/chantelle-ice-skating-lessons.jpg";
+import Licence from "./Media/chantelle-coach-licence.jpg";
 
 // lazy-loaded page bits
 const Coaching = lazy(() => import("./PageComponents/Coaching"));
@@ -52,7 +54,11 @@ const App = () => {
 
   // scroll to bottom when switching to gallery
   useEffect(() => {
-    if (CurrentView === "gallery" || CurrentView === "bookingsPage") {
+    if (
+      CurrentView === "gallery" ||
+      CurrentView === "bookingsPage" ||
+      CurrentView === "coachinglicence"
+    ) {
       window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
     }
   }, [CurrentView]);
@@ -86,6 +92,9 @@ const App = () => {
               </button>
               <button onClick={() => navigateTo("bookingsPage")}>
                 Bookings
+              </button>
+              <button onClick={() => navigateTo("coachinglicence")}>
+                Licence
               </button>
               <button onClick={() => navigateTo("gallery")}>Gallery</button>
             </div>
@@ -121,7 +130,7 @@ const App = () => {
                   className="section-container"
                   title="Ice skating lessons in Slough"
                 >
-                  <About />
+                  <About OnNavigate={SetCurrentView} />
                 </LazyLoadSection>
                 <LazyLoadSection
                   id="new"
@@ -149,6 +158,12 @@ const App = () => {
                   Slough Ice Rink Ice Skating Lessons
                 </title>
                 <Bookings />
+              </div>
+            )}
+            {CurrentView === "coachinglicence" && (
+              <div className="section-container">
+                <title className="section-header">Coaching Licence</title>
+                <CoachingLicence Licence={Licence} />
               </div>
             )}
           </Suspense>

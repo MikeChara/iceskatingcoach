@@ -234,6 +234,15 @@ body {
   margin: 0 auto;
 }
 
+/* This image is located in CoachingLicence */
+.licence {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%; /* Max width for larger screens */
+  margin: 0 auto;
+}
+
 /* Each carousel item occupies the full container */
 .carousel-item {
   position: absolute;

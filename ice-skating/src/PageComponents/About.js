@@ -1,4 +1,4 @@
-export default function About() {
+export default function About({ OnNavigate }) {
   return (
     <>
       <div className="section-header">
@@ -16,6 +16,12 @@ export default function About() {
         The only thing that rivals the thrill of competing and performing?
         Seeing the success and growth of those I teach.
       </p>
+      <button
+        onClick={() => OnNavigate("coachinglicence")}
+        className="link-button"
+      >
+        I'm a qualified coach and you can read about that here
+      </button>
     </>
   );
 }
