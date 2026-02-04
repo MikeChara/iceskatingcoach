@@ -14,7 +14,7 @@ const New = lazy(() => import("./PageComponents/New"));
 const About = lazy(() => import("./PageComponents/About"));
 
 const IMAGE_ARRAY = importAllImages(
-  require.context("./Media", false, /\.(png|jpe?g|svg)$/)
+  require.context("./Media", false, /\.(png|jpe?g|svg)$/),
 );
 
 function importAllImages(r) {
@@ -112,6 +112,7 @@ const App = () => {
               alt="Chantelle Ice Skating Lessons"
               className="visually-hidden"
               aria-hidden="false"
+              fetchpriority="high"
             />
             <div className="hero-overlay">
               <h1>Inspire Your Journey</h1>
