@@ -15,18 +15,19 @@ export default function CoachingLicence({ Licence }) {
           href="https://www.iceskating.org.uk/_files/ugd/edc78b_417696823faf474bb39b6cef3351dfe2.pdf"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="A link to a document from the ice skating organisational website that describes the code of conduct for coaches"
         >
           here.
         </a>
       </p>
       <p>
-        If you're interested, you can read more about the coaching licence{" "}
         <a
           href="https://www.iceskating.org.uk/coaches"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="A link to the ice skating organisational website"
         >
-          here.
+          Further reading on ice skating coaches can be found here.
         </a>
         <p></p>
         <p>And you can use the QR code below too, if you like.</p>
