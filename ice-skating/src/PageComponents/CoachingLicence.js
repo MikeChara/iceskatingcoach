@@ -1,4 +1,4 @@
-export default function CoachingLicence({ Licence }) {
+export default function CoachingLicence({ Licence, OnNavigate }) {
   return (
     <>
       <div className="section-header">
@@ -37,6 +37,12 @@ export default function CoachingLicence({ Licence }) {
           alt="Chantelle coaching licence"
         />
       </p>
+      <button
+        onClick={() => OnNavigate("bookingsPage")}
+        className="link-button"
+      >
+        How do I book a lesson?
+      </button>
     </>
   );
 }

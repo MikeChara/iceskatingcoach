@@ -17,6 +17,13 @@ export default function Coaching({ OnNavigate }) {
         We focus on your preferences, at your own pace, with one-to-one lessons.
       </p>
       <button
+        onClick={() => OnNavigate("coachinglicence")}
+        className="link-button"
+      >
+        I'm a qualified coach and you can read about that here
+      </button>
+      <br />
+      <button
         onClick={() => OnNavigate("bookingsPage")}
         className="link-button"
       >

@@ -131,7 +131,7 @@ const App = () => {
                   className="section-container"
                   title="Ice skating lessons in Slough"
                 >
-                  <About OnNavigate={SetCurrentView} />
+                  <About />
                 </LazyLoadSection>
                 <LazyLoadSection
                   id="new"
@@ -164,7 +164,10 @@ const App = () => {
             {CurrentView === "coachinglicence" && (
               <div className="section-container">
                 <title className="section-header">Coaching Licence</title>
-                <CoachingLicence Licence={Licence} />
+                <CoachingLicence
+                  Licence={Licence}
+                  OnNavigate={SetCurrentView}
+                />
               </div>
             )}
           </Suspense>
