@@ -20,7 +20,7 @@ export default function Coaching({ OnNavigate }) {
         onClick={() => OnNavigate("coachinglicence")}
         className="link-button"
       >
-        I'm a qualified coach and you can read about that here
+        I'm a qualified coach.
       </button>
       <br />
       <button
