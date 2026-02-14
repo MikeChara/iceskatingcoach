@@ -106,7 +106,7 @@ const App = () => {
         </header>
 
         <main className="main-content">
-          <section id="hero" className="hero-section" fetchpriority="high">
+          <section id="hero" className="hero-section">
             <img
               src={Chantelle}
               alt="Chantelle Ice Skating Lessons"
