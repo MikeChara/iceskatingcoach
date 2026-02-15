@@ -1,7 +1,10 @@
 export default function Bookings() {
   return (
     <div>
-      <p>
+      <div className="section-header">
+        <h1>Booking an ice skating lesson</h1>
+      </div>
+      <div>
         <p>Currently my only available timeslots are Friday and Sunday.</p>
         <p>Pricing: £30 for 30 minutes, discounted to £50 for a full hour.</p>
         <p>
@@ -13,7 +16,7 @@ export default function Bookings() {
         <a href="mailto:chantelle@coachchantelle.app">
           chantelle@coachchantelle.app
         </a>
-      </p>
+      </div>
     </div>
   );
 }
