@@ -7,11 +7,12 @@ import CoachingLicence from "./PageComponents/CoachingLicence";
 import SEO from "./Components/SEO";
 import Chantelle from "./Media/chantelle-ice-skating-lessons.jpg";
 import Licence from "./Media/chantelle-coach-licence.jpg";
+import About from "./PageComponents/About";
 
 // lazy-loaded page bits
 const Coaching = lazy(() => import("./PageComponents/Coaching"));
 const New = lazy(() => import("./PageComponents/New"));
-const About = lazy(() => import("./PageComponents/About"));
+//const About = lazy(() => import("./PageComponents/About"));
 
 const IMAGE_ARRAY = importAllImages(
   require.context("./Media", false, /\.(png|jpe?g|svg)$/),
@@ -81,7 +82,7 @@ const App = () => {
       <SEO />
       <div className="app-container">
         <header className={`header ${Scrolled ? "scrolled" : ""}`}>
-          <div className="logo">Chantelle A' Court</div>
+          <h1 className="logo">Ice Skating Lessons with Chantelle A' Court</h1>
           <nav className="nav-container">
             <div className={`nav-buttons ${MobileNavOpen ? "open" : ""}`}>
               <button onClick={() => navigateTo("main", "hero")}>Home</button>
@@ -126,13 +127,14 @@ const App = () => {
           <Suspense fallback={<div className="lazy-loading">Loading...</div>}>
             {CurrentView === "main" && (
               <>
-                <LazyLoadSection
+                <section
                   id="about"
                   className="section-container"
                   title="Ice skating lessons in Slough"
                 >
                   <About />
-                </LazyLoadSection>
+                </section>
+
                 <LazyLoadSection
                   id="new"
                   className="section-container"
