@@ -5,7 +5,6 @@ import Gallery from "./PageComponents/Gallery";
 import Bookings from "./PageComponents/Bookings";
 import SEO from "./Components/SEO";
 import Chantelle from "./Media/chantelle-ice-skating-lessons.jpg";
-import Licence from "./Media/chantelle-coach-licence.jpg";
 import About from "./PageComponents/About";
 
 // lazy-loaded page bits
