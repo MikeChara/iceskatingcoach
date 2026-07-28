@@ -3,7 +3,6 @@ import "./App.css";
 import LazyLoadSection from "./Components/LazyLoadSection";
 import Gallery from "./PageComponents/Gallery";
 import Bookings from "./PageComponents/Bookings";
-import CoachingLicence from "./PageComponents/CoachingLicence";
 import SEO from "./Components/SEO";
 import Chantelle from "./Media/chantelle-ice-skating-lessons.jpg";
 import Licence from "./Media/chantelle-coach-licence.jpg";
@@ -55,11 +54,7 @@ const App = () => {
 
   // scroll to bottom when switching to gallery
   useEffect(() => {
-    if (
-      CurrentView === "gallery" ||
-      CurrentView === "bookingsPage" ||
-      CurrentView === "coachinglicence"
-    ) {
+    if (CurrentView === "gallery" || CurrentView === "bookingsPage") {
       window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
     }
   }, [CurrentView]);
@@ -93,9 +88,6 @@ const App = () => {
               </button>
               <button onClick={() => navigateTo("bookingsPage")}>
                 Bookings
-              </button>
-              <button onClick={() => navigateTo("coachinglicence")}>
-                Licence
               </button>
               <button onClick={() => navigateTo("gallery")}>Gallery</button>
             </div>
@@ -161,15 +153,6 @@ const App = () => {
                   Slough Ice Rink Ice Skating Lessons
                 </title>
                 <Bookings />
-              </div>
-            )}
-            {CurrentView === "coachinglicence" && (
-              <div className="section-container">
-                <title className="section-header">Coaching Licence</title>
-                <CoachingLicence
-                  Licence={Licence}
-                  OnNavigate={SetCurrentView}
-                />
               </div>
             )}
           </Suspense>
