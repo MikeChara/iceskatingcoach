@@ -6,9 +6,8 @@ export default function About() {
       </div>
       <p>
         Hello, I'm Chantelle — a seasoned performer and passionate ice skating
-        coach based at Slough Ice Arena. You can often find me at the ice rink
-        providing ice skating lessons to those of all ages and experience
-        levels.
+        coach offering lessons and training at Slough Ice Arena. All ages and
+        experience levels welcome.
       </p>
       <p>
         I've been on the ice for most of my life, many of them at professional
